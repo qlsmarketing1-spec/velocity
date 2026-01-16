@@ -3,6 +3,7 @@ import Hero from '@/components/Hero';
 import TrustIndexPlaceholder from '@/components/TrustIndexPlaceholder';
 import About from '@/components/About';
 import Services from '@/components/Services';
+import OurStory from '@/components/OurStory';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 
@@ -15,6 +16,7 @@ const Index = () => {
         <TrustIndexPlaceholder />
         <About />
         <Services />
+        <OurStory />
         <Contact />
       </main>
       <Footer />
