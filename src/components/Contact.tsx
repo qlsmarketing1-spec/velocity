@@ -1,4 +1,4 @@
-import { Phone, Mail, Clock, MapPin } from 'lucide-react';
+import { Phone, Mail, Clock, MapPin, Check } from 'lucide-react';
 
 const Contact = () => {
   const contactInfo = [
@@ -26,17 +26,34 @@ const Contact = () => {
     },
   ];
 
+  const trustBadges = [
+    '5 Star Rated Google Shop',
+    'Most Certified Shop in [Your City]',
+    'Passionate Team',
+    'Licensed & Insured',
+  ];
+
   return (
     <section id="contact" className="section-padding bg-card">
       <div className="container mx-auto">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-8">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
             Get In <span className="text-gradient-blue">Touch</span>
           </h2>
           <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
             Ready for a showroom shine? Contact us today to schedule your mobile detailing service.
           </p>
+        </div>
+
+        {/* Trust Badges */}
+        <div className="flex flex-wrap justify-center items-center gap-4 md:gap-8 mb-16">
+          {trustBadges.map((badge, index) => (
+            <div key={index} className="flex items-center gap-2">
+              <Check className="w-5 h-5 text-primary" />
+              <span className="text-sm md:text-base text-foreground/80">{badge}</span>
+            </div>
+          ))}
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
