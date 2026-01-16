@@ -35,7 +35,7 @@ const Hero = () => {
               <ArrowRight size={20} />
             </a>
             <a
-              href="tel:6515093631"
+              href="tel:[yourphone]"
               className="btn-outline-blue flex items-center gap-2 text-lg"
             >
               <Phone size={20} />

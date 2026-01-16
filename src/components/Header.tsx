@@ -58,11 +58,11 @@ const Header = () => {
           {/* CTA & Mobile Menu */}
           <div className="flex items-center gap-4">
             <a
-              href="tel:6515093631"
+              href="tel:[yourphone]"
               className="hidden md:flex items-center gap-2 text-primary font-medium"
             >
               <Phone size={18} />
-              <span>(651) 509-3631</span>
+              <span>[Your Phone]</span>
             </a>
             <a
               href="#contact"
@@ -97,11 +97,11 @@ const Header = () => {
                 </a>
               ))}
               <a
-                href="tel:6515093631"
+                href="tel:[yourphone]"
                 className="flex items-center gap-2 text-primary font-medium py-2"
               >
                 <Phone size={18} />
-                <span>(651) 509-3631</span>
+                <span>[Your Phone]</span>
               </a>
             </div>
           </nav>
