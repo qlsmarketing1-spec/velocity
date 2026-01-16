@@ -34,7 +34,7 @@ const Footer = () => {
           {/* Brand */}
           <div>
             <a href="#home" className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded-lg gradient-gold flex items-center justify-center">
+              <div className="w-10 h-10 rounded-lg gradient-blue flex items-center justify-center">
                 <span className="font-display font-bold text-lg text-primary-foreground">SS</span>
               </div>
               <span className="font-display text-xl tracking-wider">

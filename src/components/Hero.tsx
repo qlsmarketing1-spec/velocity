@@ -22,7 +22,7 @@ const Hero = () => {
           <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-tight animate-fade-up">
             <span className="text-foreground">Twin Cities</span>
             <br />
-            <span className="text-gradient-gold">Car Detailing</span>
+            <span className="text-gradient-blue">Car Detailing</span>
           </h1>
 
           <p className="mt-6 text-lg md:text-xl text-foreground/80 max-w-xl animate-fade-up delay-100">
@@ -30,13 +30,13 @@ const Hero = () => {
           </p>
 
           <div className="mt-10 flex flex-wrap gap-4 animate-fade-up delay-200">
-            <a href="#contact" className="btn-gold flex items-center gap-2 text-lg">
+            <a href="#contact" className="btn-blue flex items-center gap-2 text-lg">
               Book Online
               <ArrowRight size={20} />
             </a>
             <a
               href="tel:6515093631"
-              className="btn-outline-gold flex items-center gap-2 text-lg"
+              className="btn-outline-blue flex items-center gap-2 text-lg"
             >
               <Phone size={20} />
               Call Now
@@ -68,12 +68,6 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-foreground/30 rounded-full flex justify-center pt-2">
-          <div className="w-1.5 h-3 bg-primary rounded-full" />
-        </div>
-      </div>
     </section>
   );
 };

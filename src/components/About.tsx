@@ -13,7 +13,7 @@ const About = () => {
           {/* Text Content */}
           <div>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              <span className="text-gradient-gold">We Got You</span>
+              <span className="text-gradient-blue">We Got You</span>
             </h2>
             <p className="text-lg text-foreground/80 mb-6 leading-relaxed">
               At Shine Squad, we understand that your vehicle is more than just transportation—it's an extension of your lifestyle. Our expert team brings years of professional detailing experience directly to your location.
@@ -21,7 +21,7 @@ const About = () => {
             <p className="text-lg text-foreground/80 mb-8 leading-relaxed">
               Using only premium products and cutting-edge techniques, we restore your vehicle to showroom condition. From thorough interior deep cleans to paint correction and ceramic coating, we've got you covered.
             </p>
-            <a href="#contact" className="btn-gold inline-block">
+            <a href="#contact" className="btn-blue inline-block">
               Contact Us
             </a>
           </div>

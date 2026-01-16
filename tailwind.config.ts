@@ -23,10 +23,10 @@ export default {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
-        gold: {
-          DEFAULT: "hsl(var(--gold))",
-          light: "hsl(var(--gold-light))",
-          dark: "hsl(var(--gold-dark))",
+        blue: {
+          DEFAULT: "hsl(var(--blue))",
+          light: "hsl(var(--blue-light))",
+          dark: "hsl(var(--blue-dark))",
         },
         charcoal: {
           DEFAULT: "hsl(var(--charcoal))",
@@ -69,7 +69,7 @@ export default {
         xl: "1.25rem",
       },
       boxShadow: {
-        gold: "var(--shadow-gold)",
+        blue: "var(--shadow-blue)",
         card: "var(--shadow-card)",
         soft: "var(--shadow-soft)",
       },

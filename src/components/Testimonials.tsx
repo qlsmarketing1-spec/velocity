@@ -35,7 +35,7 @@ const Testimonials = () => {
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
-            What Our <span className="text-gradient-gold">Clients Say</span>
+            What Our <span className="text-gradient-blue">Clients Say</span>
           </h2>
           <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
             Don't just take our word for it. Here's what our happy customers have to say.
@@ -73,7 +73,7 @@ const Testimonials = () => {
 
               {/* Author */}
               <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-full gradient-gold flex items-center justify-center">
+                <div className="w-12 h-12 rounded-full gradient-blue flex items-center justify-center">
                   <span className="font-bold text-primary-foreground">
                     {testimonial.name.charAt(0)}
                   </span>

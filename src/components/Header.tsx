@@ -34,7 +34,7 @@ const Header = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <a href="#home" className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-lg gradient-gold flex items-center justify-center">
+            <div className="w-10 h-10 rounded-lg gradient-blue flex items-center justify-center">
               <span className="font-display font-bold text-lg text-primary-foreground">SS</span>
             </div>
             <span className="font-display text-xl md:text-2xl tracking-wider text-foreground">
@@ -66,7 +66,7 @@ const Header = () => {
             </a>
             <a
               href="#contact"
-              className="hidden sm:block btn-gold text-sm"
+              className="hidden sm:block btn-blue text-sm"
             >
               Book Now
             </a>
