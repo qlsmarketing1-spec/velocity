@@ -1,31 +1,29 @@
-import { Phone, Instagram, Facebook, Youtube, Linkedin } from 'lucide-react';
+import { Phone, Instagram, Facebook, Youtube, Linkedin } from "lucide-react";
 
 const Footer = () => {
   const locations = [
-    'Eden Prairie, MN',
-    'Chanhassen, MN',
-    'Minnetonka, MN',
-    'Wayzata, MN',
-    'Excelsior, MN',
-    'Shorewood, MN',
-    'Victoria, MN',
-    'Orono, MN',
-    'Plymouth, MN',
-    'Hopkins, MN',
-    'Minneapolis, MN',
-    'Edina, MN',
+    "[Service Area 1]",
+    "[Service Area 2]",
+    "[Service Area 4]",
+    "[Service Area 5]",
+    "[Service Area 6]",
+    "[Service Area 7]",
+    "[Service Area 8]",
+    "[Service Area 9]",
+    "[Service Area 10]",
+    "[Service Area 11]",
+    "[Service Area 12]",
+    "[Service Area 13]",
   ];
 
   const socialLinks = [
-    { icon: Instagram, href: 'https://www.instagram.com/[yourcompany]/', label: 'Instagram' },
-    { icon: Facebook, href: 'https://www.facebook.com/[yourcompany]', label: 'Facebook' },
-    { icon: Youtube, href: 'http://www.youtube.com/@[YourCompany]', label: 'YouTube' },
-    { icon: Linkedin, href: 'https://www.linkedin.com/company/[your-company]', label: 'LinkedIn' },
+    { icon: Instagram, href: "https://www.instagram.com/[yourcompany]/", label: "Instagram" },
+    { icon: Facebook, href: "https://www.facebook.com/[yourcompany]", label: "Facebook" },
+    { icon: Youtube, href: "http://www.youtube.com/@[YourCompany]", label: "YouTube" },
+    { icon: Linkedin, href: "https://www.linkedin.com/company/[your-company]", label: "LinkedIn" },
   ];
 
-  const hours = [
-    { day: 'Sunday - Saturday', time: '8am — 8pm' },
-  ];
+  const hours = [{ day: "Sunday - Saturday", time: "8am — 8pm" }];
 
   return (
     <footer className="bg-background py-16 px-4 md:px-8">
@@ -44,10 +42,7 @@ const Footer = () => {
             <p className="text-foreground/60 mb-6">
               Professional mobile car detailing services throughout the [Your City] metro area.
             </p>
-            <a
-              href="tel:6515093631"
-              className="flex items-center gap-2 text-primary font-medium"
-            >
+            <a href="tel:6515093631" className="flex items-center gap-2 text-primary font-medium">
               <Phone size={18} />
               <span>(651) 509-3631</span>
             </a>
@@ -55,9 +50,7 @@ const Footer = () => {
 
           {/* Locations */}
           <div>
-            <h4 className="font-display text-lg mb-6 uppercase tracking-wider">
-              Locations Served
-            </h4>
+            <h4 className="font-display text-lg mb-6 uppercase tracking-wider">Locations Served</h4>
             <ul className="grid grid-cols-2 gap-x-4 gap-y-2">
               {locations.slice(0, 8).map((location, index) => (
                 <li key={index} className="text-sm text-foreground/60">
@@ -73,8 +66,7 @@ const Footer = () => {
             <ul className="space-y-2">
               {hours.map((item, index) => (
                 <li key={index} className="text-sm text-foreground/60">
-                  <span className="font-medium text-foreground">{item.day}:</span>{' '}
-                  {item.time}
+                  <span className="font-medium text-foreground">{item.day}:</span> {item.time}
                 </li>
               ))}
             </ul>
@@ -83,9 +75,7 @@ const Footer = () => {
 
           {/* Social */}
           <div>
-            <h4 className="font-display text-lg mb-6 uppercase tracking-wider">
-              Follow Us
-            </h4>
+            <h4 className="font-display text-lg mb-6 uppercase tracking-wider">Follow Us</h4>
             <div className="flex gap-4">
               {socialLinks.map((social, index) => (
                 <a
