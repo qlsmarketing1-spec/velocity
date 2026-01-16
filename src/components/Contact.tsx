@@ -32,8 +32,8 @@ const Contact = () => {
     {
       icon: Phone,
       label: 'Phone',
-      value: '(651) 509-3631',
-      href: 'tel:6515093631',
+      value: '[Your Phone]',
+      href: 'tel:[yourphone]',
     },
     {
       icon: Mail,
@@ -109,7 +109,7 @@ const Contact = () => {
                       onChange={handleChange}
                       required
                       className="w-full px-4 py-3 rounded-lg bg-background border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors"
-                      placeholder="(555) 555-5555"
+                      placeholder="[Your Phone]"
                     />
                   </div>
                 </div>

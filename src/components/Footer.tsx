@@ -42,9 +42,9 @@ const Footer = () => {
             <p className="text-foreground/60 mb-6">
               Professional mobile car detailing services throughout the [Your City] metro area.
             </p>
-            <a href="tel:6515093631" className="flex items-center gap-2 text-primary font-medium">
+            <a href="tel:[yourphone]" className="flex items-center gap-2 text-primary font-medium">
               <Phone size={18} />
-              <span>(651) 509-3631</span>
+              <span>[Your Phone]</span>
             </a>
           </div>
 
