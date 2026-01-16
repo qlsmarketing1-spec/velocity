@@ -20,8 +20,8 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/car-detailing" element={<CarDetailing />} />
-          <Route path="/ceramic-coating" element={<CeramicCoating />} />
+          <Route path="/car-detailing-[your-city]-[state]" element={<CarDetailing />} />
+          <Route path="/ceramic-coating-[your-city]-[state]" element={<CeramicCoating />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/blog" element={<Blog />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

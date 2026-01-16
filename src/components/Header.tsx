@@ -15,8 +15,8 @@ const Header = () => {
   }, []);
 
   const navLinks = [
-    { href: '/car-detailing', label: 'Car Detailing' },
-    { href: '/ceramic-coating', label: 'Ceramic Coating' },
+    { href: '/car-detailing-[your-city]-[state]', label: 'Car Detailing' },
+    { href: '/ceramic-coating-[your-city]-[state]', label: 'Ceramic Coating' },
     { href: '/contact', label: 'Contact' },
     { href: '/blog', label: 'Blog' },
   ];
