@@ -96,7 +96,7 @@ const Services = () => {
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
-            Our <span className="text-gradient-gold">Services</span>
+            Our <span className="text-gradient-blue">Services</span>
           </h2>
           <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
             Professional mobile detailing services tailored to your needs. We come to you, anywhere in the Twin Cities area.
@@ -141,7 +141,7 @@ const Services = () => {
                     <span className="text-sm text-foreground/60">Starting at</span>
                     <p className="text-2xl font-bold text-primary">{service.price}</p>
                   </div>
-                  <a href="#contact" className="btn-gold text-sm px-6 py-2">
+                  <a href="#contact" className="btn-blue text-sm px-6 py-2">
                     Book Now
                   </a>
                 </div>

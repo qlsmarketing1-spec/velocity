@@ -59,7 +59,7 @@ const Contact = () => {
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
-            Get In <span className="text-gradient-gold">Touch</span>
+            Get In <span className="text-gradient-blue">Touch</span>
           </h2>
           <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
             Ready for a showroom shine? Contact us today to schedule your mobile detailing service.
@@ -71,7 +71,7 @@ const Contact = () => {
           <div className="glass-card p-6 lg:p-8">
             {isSubmitted ? (
               <div className="text-center py-12">
-                <div className="w-16 h-16 rounded-full gradient-gold mx-auto mb-4 flex items-center justify-center">
+                <div className="w-16 h-16 rounded-full gradient-blue mx-auto mb-4 flex items-center justify-center">
                   <Send className="w-8 h-8 text-primary-foreground" />
                 </div>
                 <h3 className="text-2xl font-bold mb-2">Thank You!</h3>
@@ -168,7 +168,7 @@ const Contact = () => {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="btn-gold w-full flex items-center justify-center gap-2"
+                  className="btn-blue w-full flex items-center justify-center gap-2"
                 >
                   {isSubmitting ? (
                     <div className="w-5 h-5 border-2 border-primary-foreground/30 border-t-primary-foreground rounded-full animate-spin" />
@@ -217,7 +217,7 @@ const Contact = () => {
                 href="https://app.urable.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-gold inline-block"
+                className="btn-blue inline-block"
               >
                 Book Appointment
               </a>
