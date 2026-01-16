@@ -20,13 +20,13 @@ const Hero = () => {
       <div className="relative z-10 container mx-auto px-4 md:px-8 pt-20">
         <div className="max-w-3xl">
           <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-tight animate-fade-up">
-            <span className="text-foreground">Twin Cities</span>
+            <span className="text-foreground">[Your City]</span>
             <br />
             <span className="text-gradient-blue">Car Detailing</span>
           </h1>
 
           <p className="mt-6 text-lg md:text-xl text-foreground/80 max-w-xl animate-fade-up delay-100">
-            Your time is valuable. That's why Shine Squad brings professional detailing services right to your doorstep.
+            Your time is valuable. That's why [Your Company] brings professional detailing services right to your doorstep.
           </p>
 
           <div className="mt-10 flex flex-wrap gap-4 animate-fade-up delay-200">

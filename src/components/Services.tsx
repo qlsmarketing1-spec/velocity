@@ -99,7 +99,7 @@ const Services = () => {
             Our <span className="text-gradient-blue">Services</span>
           </h2>
           <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
-            Professional mobile detailing services tailored to your needs. We come to you, anywhere in the Twin Cities area.
+            Professional mobile detailing services tailored to your needs. We come to you, anywhere in the [Your City] area.
           </p>
         </div>
 

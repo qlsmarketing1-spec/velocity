@@ -16,7 +16,7 @@ const About = () => {
               <span className="text-gradient-blue">We Got You</span>
             </h2>
             <p className="text-lg text-foreground/80 mb-6 leading-relaxed">
-              At Shine Squad, we understand that your vehicle is more than just transportation—it's an extension of your lifestyle. Our expert team brings years of professional detailing experience directly to your location.
+              At [Your Company], we understand that your vehicle is more than just transportation—it's an extension of your lifestyle. Our expert team brings years of professional detailing experience directly to your location.
             </p>
             <p className="text-lg text-foreground/80 mb-8 leading-relaxed">
               Using only premium products and cutting-edge techniques, we restore your vehicle to showroom condition. From thorough interior deep cleans to paint correction and ceramic coating, we've got you covered.
