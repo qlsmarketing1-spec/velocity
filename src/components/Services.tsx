@@ -2,6 +2,9 @@ import { Check } from 'lucide-react';
 import interiorImage from '@/assets/interior-detail.jpg';
 import exteriorImage from '@/assets/exterior-detail.jpg';
 import ceramicImage from '@/assets/ceramic-coating.jpg';
+import paintCorrectionImage from '@/assets/paint-correction.jpg';
+import engineDetailImage from '@/assets/engine-detail.jpg';
+import headlightRestoreImage from '@/assets/headlight-restore.jpg';
 
 interface Service {
   title: string;
@@ -46,6 +49,42 @@ const services: Service[] = [
       '2-year protection',
       'Hydrophobic finish',
       'UV protection',
+    ],
+  },
+  {
+    title: 'Paint Correction',
+    description: 'Remove swirls, scratches, and oxidation for a flawless finish.',
+    price: '$299',
+    image: paintCorrectionImage,
+    features: [
+      'Swirl mark removal',
+      'Scratch elimination',
+      'Machine polishing',
+      'Gloss enhancement',
+    ],
+  },
+  {
+    title: 'Engine Bay Detail',
+    description: 'Comprehensive engine bay cleaning and dressing.',
+    price: '$89',
+    image: engineDetailImage,
+    features: [
+      'Degreasing & cleaning',
+      'Plastic & rubber dressing',
+      'Hose & wire detailing',
+      'Protective coating',
+    ],
+  },
+  {
+    title: 'Headlight Restoration',
+    description: 'Restore clarity and brightness to foggy headlights.',
+    price: '$79',
+    image: headlightRestoreImage,
+    features: [
+      'Oxidation removal',
+      'Lens polishing',
+      'UV sealant application',
+      'Improved visibility',
     ],
   },
 ];
