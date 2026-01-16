@@ -119,6 +119,24 @@ const Contact = () => {
             </div>
           </div>
         </div>
+
+        {/* TrustIndex Placeholder */}
+        <div className="mt-16">
+          <div className="glass-card p-8 text-center">
+            <h3 className="text-xl font-bold mb-3">Customer Reviews</h3>
+            <p className="text-foreground/60 mb-6">
+              Paste your TrustIndex embed code here to display customer reviews.
+            </p>
+            <div className="w-full p-6 rounded-lg border-2 border-dashed border-border bg-background/50">
+              <code className="text-sm text-foreground/50">
+                {/* Insert TrustIndex embed code here */}
+              </code>
+              <p className="text-xs text-foreground/40 mt-2">
+                [TrustIndex Embed Code Placeholder]
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
