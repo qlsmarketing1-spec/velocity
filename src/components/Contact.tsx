@@ -1,33 +1,6 @@
-import { useState } from 'react';
-import { Phone, Mail, Clock, MapPin, Send } from 'lucide-react';
+import { Phone, Mail, Clock, MapPin } from 'lucide-react';
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    service: '',
-    message: '',
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
-  ) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    setIsSubmitting(false);
-    setIsSubmitted(true);
-    setFormData({ name: '', email: '', phone: '', service: '', message: '' });
-  };
-
   const contactInfo = [
     {
       icon: Phone,
@@ -67,120 +40,25 @@ const Contact = () => {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
-          {/* Contact Form */}
+          {/* DetailPro Contact Form Placeholder */}
           <div className="glass-card p-6 lg:p-8">
-            {isSubmitted ? (
-              <div className="text-center py-12">
-                <div className="w-16 h-16 rounded-full gradient-blue mx-auto mb-4 flex items-center justify-center">
-                  <Send className="w-8 h-8 text-primary-foreground" />
-                </div>
-                <h3 className="text-2xl font-bold mb-2">Thank You!</h3>
-                <p className="text-foreground/70">
-                  We've received your message and will get back to you within 24 hours.
+            <div className="flex flex-col items-center justify-center min-h-[400px] text-center">
+              <div className="w-16 h-16 rounded-full bg-primary/10 mb-6 flex items-center justify-center">
+                <Mail className="w-8 h-8 text-primary" />
+              </div>
+              <h3 className="text-xl font-bold mb-3">DetailPro Contact Form</h3>
+              <p className="text-foreground/60 mb-6 max-w-sm">
+                Paste your DetailPro embed code here to display your contact form.
+              </p>
+              <div className="w-full p-4 rounded-lg border-2 border-dashed border-border bg-background/50">
+                <code className="text-sm text-foreground/50">
+                  {/* Insert DetailPro embed code here */}
+                </code>
+                <p className="text-xs text-foreground/40 mt-2">
+                  [DetailPro Embed Code Placeholder]
                 </p>
               </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium mb-2">
-                      Name *
-                    </label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-4 py-3 rounded-lg bg-background border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors"
-                      placeholder="Your name"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="phone" className="block text-sm font-medium mb-2">
-                      Phone *
-                    </label>
-                    <input
-                      type="tel"
-                      id="phone"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-4 py-3 rounded-lg bg-background border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors"
-                      placeholder="[Your Phone]"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium mb-2">
-                    Email *
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 rounded-lg bg-background border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors"
-                    placeholder="your@email.com"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="service" className="block text-sm font-medium mb-2">
-                    Service Interest
-                  </label>
-                  <select
-                    id="service"
-                    name="service"
-                    value={formData.service}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-lg bg-background border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors"
-                  >
-                    <option value="">Select a service</option>
-                    <option value="interior">Interior Detailing</option>
-                    <option value="exterior">Exterior Detailing</option>
-                    <option value="ceramic">Ceramic Coating</option>
-                    <option value="full">Full Detail Package</option>
-                    <option value="other">Other</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium mb-2">
-                    Message
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    rows={4}
-                    className="w-full px-4 py-3 rounded-lg bg-background border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors resize-none"
-                    placeholder="Tell us about your vehicle and any specific needs..."
-                  />
-                </div>
-
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="btn-blue w-full flex items-center justify-center gap-2"
-                >
-                  {isSubmitting ? (
-                    <div className="w-5 h-5 border-2 border-primary-foreground/30 border-t-primary-foreground rounded-full animate-spin" />
-                  ) : (
-                    <>
-                      <Send className="w-5 h-5" />
-                      Send Message
-                    </>
-                  )}
-                </button>
-              </form>
-            )}
+            </div>
           </div>
 
           {/* Contact Info */}
