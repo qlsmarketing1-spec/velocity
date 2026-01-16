@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, Phone } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -14,12 +15,10 @@ const Header = () => {
   }, []);
 
   const navLinks = [
-    { href: '#home', label: 'Home' },
-    { href: '#about', label: 'About' },
-    { href: '#services', label: 'Services' },
-    { href: '#pricing', label: 'Pricing' },
-    { href: '#testimonials', label: 'Reviews' },
-    { href: '#contact', label: 'Contact' },
+    { href: '/car-detailing', label: 'Car Detailing' },
+    { href: '/ceramic-coating', label: 'Ceramic Coating' },
+    { href: '/contact', label: 'Contact' },
+    { href: '/blog', label: 'Blog' },
   ];
 
   return (
@@ -33,25 +32,25 @@ const Header = () => {
       <div className="container mx-auto px-4 md:px-8">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <a href="#home" className="flex items-center gap-3">
+          <Link to="/" className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-lg gradient-blue flex items-center justify-center">
               <span className="font-display font-bold text-lg text-primary-foreground">YC</span>
             </div>
             <span className="font-display text-xl md:text-2xl tracking-wider text-foreground">
               [YOUR <span className="text-primary">COMPANY]</span>
             </span>
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.href}
-                href={link.href}
+                to={link.href}
                 className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors duration-200 uppercase tracking-wide"
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
           </nav>
 
@@ -64,12 +63,12 @@ const Header = () => {
               <Phone size={18} />
               <span>[Your Phone]</span>
             </a>
-            <a
-              href="#contact"
+            <Link
+              to="/contact"
               className="hidden sm:block btn-blue text-sm"
             >
               Book Now
-            </a>
+            </Link>
 
             {/* Mobile Menu Toggle */}
             <button
@@ -87,14 +86,14 @@ const Header = () => {
           <nav className="lg:hidden mt-4 pb-4 animate-fade-in">
             <div className="flex flex-col gap-4">
               {navLinks.map((link) => (
-                <a
+                <Link
                   key={link.href}
-                  href={link.href}
+                  to={link.href}
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="text-foreground/80 hover:text-primary transition-colors py-2 uppercase tracking-wide font-medium"
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
               <a
                 href="tel:[yourphone]"
