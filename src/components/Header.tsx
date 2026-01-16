@@ -35,10 +35,10 @@ const Header = () => {
           {/* Logo */}
           <a href="#home" className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-lg gradient-blue flex items-center justify-center">
-              <span className="font-display font-bold text-lg text-primary-foreground">SS</span>
+              <span className="font-display font-bold text-lg text-primary-foreground">YC</span>
             </div>
             <span className="font-display text-xl md:text-2xl tracking-wider text-foreground">
-              SHINE <span className="text-primary">SQUAD</span>
+              [YOUR <span className="text-primary">COMPANY]</span>
             </span>
           </a>
 

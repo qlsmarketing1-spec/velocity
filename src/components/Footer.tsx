@@ -17,10 +17,10 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { icon: Instagram, href: 'https://www.instagram.com/shinesquadmn/', label: 'Instagram' },
-    { icon: Facebook, href: 'https://www.facebook.com/profile.php?id=61563017577456', label: 'Facebook' },
-    { icon: Youtube, href: 'http://www.youtube.com/@ShineSquadMN', label: 'YouTube' },
-    { icon: Linkedin, href: 'https://www.linkedin.com/company/shine-squad-mn', label: 'LinkedIn' },
+    { icon: Instagram, href: 'https://www.instagram.com/[yourcompany]/', label: 'Instagram' },
+    { icon: Facebook, href: 'https://www.facebook.com/[yourcompany]', label: 'Facebook' },
+    { icon: Youtube, href: 'http://www.youtube.com/@[YourCompany]', label: 'YouTube' },
+    { icon: Linkedin, href: 'https://www.linkedin.com/company/[your-company]', label: 'LinkedIn' },
   ];
 
   const hours = [
@@ -35,14 +35,14 @@ const Footer = () => {
           <div>
             <a href="#home" className="flex items-center gap-3 mb-6">
               <div className="w-10 h-10 rounded-lg gradient-blue flex items-center justify-center">
-                <span className="font-display font-bold text-lg text-primary-foreground">SS</span>
+                <span className="font-display font-bold text-lg text-primary-foreground">YC</span>
               </div>
               <span className="font-display text-xl tracking-wider">
-                SHINE <span className="text-primary">SQUAD</span>
+                [YOUR <span className="text-primary">COMPANY]</span>
               </span>
             </a>
             <p className="text-foreground/60 mb-6">
-              Professional mobile car detailing services throughout the Twin Cities metro area.
+              Professional mobile car detailing services throughout the [Your City] metro area.
             </p>
             <a
               href="tel:6515093631"
@@ -115,7 +115,7 @@ const Footer = () => {
         <div className="pt-8 border-t border-border">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm text-foreground/50">
-              © {new Date().getFullYear()} Shine Squad. All rights reserved.
+              © {new Date().getFullYear()} [Your Company]. All rights reserved.
             </p>
             <div className="flex gap-6 text-sm text-foreground/50">
               <a href="#" className="hover:text-primary transition-colors">

@@ -38,8 +38,8 @@ const Contact = () => {
     {
       icon: Mail,
       label: 'Email',
-      value: 'info@shinesquad.xyz',
-      href: 'mailto:info@shinesquad.xyz',
+      value: 'info@[yourcompany].com',
+      href: 'mailto:info@[yourcompany].com',
     },
     {
       icon: Clock,
@@ -49,7 +49,7 @@ const Contact = () => {
     {
       icon: MapPin,
       label: 'Service Area',
-      value: 'Twin Cities Metro',
+      value: '[Your City] Metro',
     },
   ];
 
