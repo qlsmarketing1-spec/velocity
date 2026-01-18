@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Phone } from 'lucide-react';
+import { Menu, X, Phone, ImageIcon } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Header = () => {
@@ -33,8 +33,9 @@ const Header = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-lg gradient-blue flex items-center justify-center">
-              <span className="font-display font-bold text-lg text-primary-foreground">YC</span>
+            <div className="w-10 h-10 rounded-lg bg-muted flex items-center justify-center border border-border overflow-hidden">
+              {/* Replace this div with: <img src={yourLogo} alt="Company Logo" className="w-full h-full object-contain" /> */}
+              <ImageIcon className="w-5 h-5 text-foreground/40" />
             </div>
             <span className="font-display text-xl md:text-2xl tracking-wider text-foreground">
               [YOUR <span className="text-primary">COMPANY]</span>
