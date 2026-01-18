@@ -6,10 +6,11 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 
 const CeramicCoating = () => {
   const packageInclusions = [
-    "Triple decontamination wash",
+    "Full decontamination wash",
     "One Step Paint Enhancement",
     "Tires Cleaned & Dressed",
     "Reported to CarFax",
+    "FREE Care Kit",
     "Aftercare Support",
   ];
 
