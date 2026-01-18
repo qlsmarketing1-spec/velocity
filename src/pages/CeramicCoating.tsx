@@ -1,7 +1,7 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
-import { Check, Shield, Sparkles, Droplets, Phone, ChevronRight } from 'lucide-react';
+import { Image as ImageIcon, Check, Shield, Sparkles, Droplets, Phone, ChevronRight } from 'lucide-react';
 import {
   Accordion,
   AccordionContent,
@@ -99,24 +99,37 @@ const CeramicCoating = () => {
       
       <main className="pt-24">
         {/* Hero Section */}
-        <section className="section-padding bg-gradient-to-b from-card to-background relative overflow-hidden">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,hsl(var(--primary)/0.1)_0%,transparent_70%)]" />
-          <div className="container mx-auto text-center relative z-10">
-            <p className="text-primary font-semibold uppercase tracking-wider mb-4">Ceramic Coating Specialists</p>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              Professional <span className="text-gradient-blue">Ceramic Coatings</span>
-            </h1>
-            <p className="text-lg md:text-xl text-foreground/70 max-w-2xl mx-auto mb-8">
-              Your Ceramic Coating Experts
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button className="btn-blue text-lg">
-                Get A Quote
-              </Button>
-              <Button variant="outline" className="btn-outline-blue text-lg">
-                View Packages
-                <ChevronRight className="ml-2 w-5 h-5" />
-              </Button>
+        <section className="relative min-h-[70vh] flex items-center overflow-hidden">
+          {/* Hero Background Image Placeholder */}
+          <div className="absolute inset-0 bg-card">
+            <div className="absolute inset-0 flex items-center justify-center border-2 border-dashed border-border">
+              <div className="text-center p-8">
+                <ImageIcon className="w-16 h-16 text-foreground/30 mx-auto mb-4" />
+                <p className="text-foreground/50">[Hero Background Image]</p>
+                <p className="text-sm text-foreground/30">Recommended: 1920x1080</p>
+              </div>
+            </div>
+            <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/70 to-transparent" />
+          </div>
+          
+          <div className="container mx-auto relative z-10 section-padding">
+            <div className="max-w-2xl">
+              <p className="text-primary font-semibold uppercase tracking-wider mb-4">Ceramic Coating Specialists</p>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+                Professional <span className="text-gradient-blue">Ceramic Coatings</span>
+              </h1>
+              <p className="text-lg md:text-xl text-foreground/70 mb-8">
+                Your Ceramic Coating Experts
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button className="btn-blue text-lg">
+                  Get A Quote
+                </Button>
+                <Button variant="outline" className="btn-outline-blue text-lg">
+                  View Packages
+                  <ChevronRight className="ml-2 w-5 h-5" />
+                </Button>
+              </div>
             </div>
           </div>
         </section>
@@ -124,14 +137,25 @@ const CeramicCoating = () => {
         {/* You May Be Thinking Section */}
         <section className="section-padding">
           <div className="container mx-auto">
-            <div className="text-center mb-12">
-              <p className="text-primary font-semibold uppercase tracking-wider mb-4">Ceramic Specialists</p>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-                You May Be Thinking...
-              </h2>
-              <p className="text-lg text-foreground/70 max-w-3xl mx-auto">
-                A ceramic coating will protect your ride from the elements, keep your vehicle looking clean longer, and make washing a breeze! Long gone are the days of spending the whole afternoon washing your car! Instead a quick wash will uncover the added glossy look of your ceramic coating!
-              </p>
+            <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+              <div>
+                <p className="text-primary font-semibold uppercase tracking-wider mb-4">Ceramic Specialists</p>
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
+                  You May Be Thinking...
+                </h2>
+                <p className="text-lg text-foreground/70">
+                  A ceramic coating will protect your ride from the elements, keep your vehicle looking clean longer, and make washing a breeze! Long gone are the days of spending the whole afternoon washing your car! Instead a quick wash will uncover the added glossy look of your ceramic coating!
+                </p>
+              </div>
+              
+              {/* Image Placeholder */}
+              <div className="aspect-[4/3] rounded-xl border-2 border-dashed border-border bg-card/50 flex items-center justify-center">
+                <div className="text-center p-8">
+                  <ImageIcon className="w-12 h-12 text-foreground/30 mx-auto mb-3" />
+                  <p className="text-foreground/50">[Ceramic Coated Car Image]</p>
+                  <p className="text-sm text-foreground/30">Water beading / glossy finish</p>
+                </div>
+              </div>
             </div>
             
             <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
@@ -252,28 +276,59 @@ const CeramicCoating = () => {
           </div>
         </section>
 
-        {/* Why Choose Us Section */}
+        {/* Before/After Gallery Section */}
         <section className="section-padding bg-card">
           <div className="container mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-                Why Choose Us To <span className="text-gradient-blue">Install?</span>
+                See The <span className="text-gradient-blue">Difference</span>
               </h2>
-              <p className="text-lg text-foreground/70 max-w-3xl mx-auto">
-                We strongly believe in transparency which is why our clients love to come back! We thoroughly inspect every vehicle that comes in and share our findings and professional recommendations with you. Our clients love knowing we keep them in the loop during the entire process.
-              </p>
             </div>
+            
+            <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+              {[1, 2, 3].map((num) => (
+                <div key={num} className="aspect-[4/3] rounded-xl border-2 border-dashed border-border bg-background/50 flex items-center justify-center card-hover">
+                  <div className="text-center p-6">
+                    <ImageIcon className="w-10 h-10 text-foreground/30 mx-auto mb-3" />
+                    <p className="text-foreground/50">[Before/After {num}]</p>
+                    <p className="text-sm text-foreground/30">Transformation photo</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
 
-            <div className="text-center">
-              <Button className="btn-blue text-lg">
-                Get A Quote
-              </Button>
+        {/* Why Choose Us Section */}
+        <section className="section-padding">
+          <div className="container mx-auto">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              {/* Image Placeholder */}
+              <div className="aspect-square rounded-xl border-2 border-dashed border-border bg-card/50 flex items-center justify-center order-2 lg:order-1">
+                <div className="text-center p-8">
+                  <ImageIcon className="w-12 h-12 text-foreground/30 mx-auto mb-3" />
+                  <p className="text-foreground/50">[Team / Shop Image]</p>
+                  <p className="text-sm text-foreground/30">Professional environment</p>
+                </div>
+              </div>
+              
+              <div className="order-1 lg:order-2">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
+                  Why Choose Us To <span className="text-gradient-blue">Install?</span>
+                </h2>
+                <p className="text-lg text-foreground/70 mb-8">
+                  We strongly believe in transparency which is why our clients love to come back! We thoroughly inspect every vehicle that comes in and share our findings and professional recommendations with you. Our clients love knowing we keep them in the loop during the entire process.
+                </p>
+                <Button className="btn-blue text-lg">
+                  Get A Quote
+                </Button>
+              </div>
             </div>
           </div>
         </section>
 
         {/* Installation Process Section */}
-        <section className="section-padding">
+        <section className="section-padding bg-card">
           <div className="container mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
@@ -287,6 +342,13 @@ const CeramicCoating = () => {
             <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
               {installationSteps.map((step) => (
                 <div key={step.step} className="glass-card p-8 card-hover">
+                  {/* Step Image Placeholder */}
+                  <div className="aspect-video rounded-lg border-2 border-dashed border-border bg-background/50 flex items-center justify-center mb-6">
+                    <div className="text-center p-4">
+                      <ImageIcon className="w-8 h-8 text-foreground/30 mx-auto mb-2" />
+                      <p className="text-sm text-foreground/40">[Step {step.step} Image]</p>
+                    </div>
+                  </div>
                   <div className="flex items-center gap-4 mb-4">
                     <div className="w-12 h-12 rounded-full gradient-blue flex items-center justify-center flex-shrink-0">
                       <span className="text-xl font-bold text-primary-foreground">{step.step}</span>
@@ -311,7 +373,7 @@ const CeramicCoating = () => {
         </section>
 
         {/* FAQ Section */}
-        <section className="section-padding bg-card">
+        <section className="section-padding">
           <div className="container mx-auto">
             <div className="text-center mb-12">
               <p className="text-primary font-semibold uppercase tracking-wider mb-4">New To Ceramic Coatings?</p>
@@ -338,7 +400,7 @@ const CeramicCoating = () => {
         </section>
 
         {/* Final CTA Section */}
-        <section className="section-padding bg-gradient-to-b from-background to-card">
+        <section className="section-padding bg-gradient-to-b from-card to-background">
           <div className="container mx-auto text-center">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
               Ready to Care for <span className="text-gradient-blue">Your Car?</span>
