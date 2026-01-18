@@ -1,22 +1,15 @@
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
-import { Button } from '@/components/ui/button';
-import { Image as ImageIcon, Check, Shield, Sparkles, Droplets, Phone, ChevronRight } from 'lucide-react';
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import { Button } from "@/components/ui/button";
+import { Image as ImageIcon, Check, Shield, Sparkles, Droplets, Phone, ChevronRight } from "lucide-react";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 const CeramicCoating = () => {
   const packageInclusions = [
     "Triple decontamination wash",
-    "One Step Paint Enhancement Service to achieve up to 60% correction",
+    "One Step Paint Enhancement",
     "Tires Cleaned & Dressed",
     "Reported to CarFax",
-    "FREE Coating Care Kit",
-    "FREE E-Book",
     "Aftercare Support",
   ];
 
@@ -43,45 +36,54 @@ const CeramicCoating = () => {
     {
       step: 1,
       title: "Clean & Decontaminate",
-      description: "Quality ceramic coatings require quality paint preparation. Step one is a triple decontamination wash with iron removal and a clay process.",
+      description:
+        "Quality ceramic coatings require quality paint preparation. Step one is a triple decontamination wash with iron removal and a clay process.",
     },
     {
       step: 2,
       title: "Inspection",
-      description: "Once your vehicle is clean, we can get a better look at the condition of the paint and recommend the best course of action to suit your needs.",
+      description:
+        "Once your vehicle is clean, we can get a better look at the condition of the paint and recommend the best course of action to suit your needs.",
     },
     {
       step: 3,
       title: "Paint Correction aka Swirl Removal",
-      description: "No matter the age of your vehicle, we will polish to make sure the paint is as clean as possible. You can stick with our included enhancement polish or achieve a near-perfect look with scratch removal.",
+      description:
+        "No matter the age of your vehicle, we will polish to make sure the paint is as clean as possible. You can stick with our included enhancement polish or achieve a near-perfect look with scratch removal.",
     },
     {
       step: 4,
       title: "Wiped, Coated, & Cured",
-      description: "Ceramic coating is a systematic process: timing and teamwork is everything. Then we wait for the coating to cure in a temperature controlled environment.",
+      description:
+        "Ceramic coating is a systematic process: timing and teamwork is everything. Then we wait for the coating to cure in a temperature controlled environment.",
     },
   ];
 
   const faqs = [
     {
       question: "Do ceramic coatings prevent rock chips?",
-      answer: "No, ceramic coatings do not prevent rock chips. They provide protection against chemical stains, UV rays, and minor scratches, but for rock chip protection, you would need Paint Protection Film (PPF).",
+      answer:
+        "No, ceramic coatings do not prevent rock chips. They provide protection against chemical stains, UV rays, and minor scratches, but for rock chip protection, you would need Paint Protection Film (PPF).",
     },
     {
       question: "What's the difference between coatings and wax?",
-      answer: "Ceramic coatings chemically bond with your paint and last 2-5+ years, while wax sits on top of the paint and typically lasts only a few weeks to months. Coatings provide superior protection and a longer-lasting shine.",
+      answer:
+        "Ceramic coatings chemically bond with your paint and last 2-5+ years, while wax sits on top of the paint and typically lasts only a few weeks to months. Coatings provide superior protection and a longer-lasting shine.",
     },
     {
       question: "Where can you apply a ceramic coating?",
-      answer: "Ceramic coatings can be applied to paint, wheels, glass, plastic trim, and interior surfaces. Each area may require a specific type of coating formulated for that surface.",
+      answer:
+        "Ceramic coatings can be applied to paint, wheels, glass, plastic trim, and interior surfaces. Each area may require a specific type of coating formulated for that surface.",
     },
     {
       question: "What will a ceramic coating look like?",
-      answer: "A properly applied ceramic coating enhances your paint's gloss and depth, giving it a wet, candy-like appearance. It also makes the surface extremely hydrophobic, causing water to bead and sheet off.",
+      answer:
+        "A properly applied ceramic coating enhances your paint's gloss and depth, giving it a wet, candy-like appearance. It also makes the surface extremely hydrophobic, causing water to bead and sheet off.",
     },
     {
       question: "What is ceramic coating?",
-      answer: "Ceramic coating is a liquid polymer applied to the exterior of a vehicle. It chemically bonds with the factory paint, creating a protective layer that enhances the vehicle's appearance and provides long-lasting protection against environmental contaminants.",
+      answer:
+        "Ceramic coating is a liquid polymer applied to the exterior of a vehicle. It chemically bonds with the factory paint, creating a protective layer that enhances the vehicle's appearance and provides long-lasting protection against environmental contaminants.",
     },
     {
       question: "How long does a ceramic coating last?",
@@ -89,14 +91,15 @@ const CeramicCoating = () => {
     },
     {
       question: "How to maintain ceramic coating?",
-      answer: "To maintain ceramic coating, regular washing with pH-neutral soap and avoiding harsh chemicals is recommended. Additionally, periodic reapplication of a maintenance product can help extend the life of the coating.",
+      answer:
+        "To maintain ceramic coating, regular washing with pH-neutral soap and avoiding harsh chemicals is recommended. Additionally, periodic reapplication of a maintenance product can help extend the life of the coating.",
     },
   ];
 
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      
+
       <main className="pt-24">
         {/* Hero Section */}
         <section className="relative min-h-[70vh] flex items-center overflow-hidden">
@@ -111,20 +114,16 @@ const CeramicCoating = () => {
             </div>
             <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/70 to-transparent" />
           </div>
-          
+
           <div className="container mx-auto relative z-10 section-padding">
             <div className="max-w-2xl">
               <p className="text-primary font-semibold uppercase tracking-wider mb-4">Ceramic Coating Specialists</p>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
                 Professional <span className="text-gradient-blue">Ceramic Coatings</span>
               </h1>
-              <p className="text-lg md:text-xl text-foreground/70 mb-8">
-                Your Ceramic Coating Experts
-              </p>
+              <p className="text-lg md:text-xl text-foreground/70 mb-8">Your Ceramic Coating Experts</p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button className="btn-blue text-lg">
-                  Get A Quote
-                </Button>
+                <Button className="btn-blue text-lg">Get A Quote</Button>
                 <Button variant="outline" className="btn-outline-blue text-lg">
                   View Packages
                   <ChevronRight className="ml-2 w-5 h-5" />
@@ -140,14 +139,14 @@ const CeramicCoating = () => {
             <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
               <div>
                 <p className="text-primary font-semibold uppercase tracking-wider mb-4">Ceramic Specialists</p>
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-                  You May Be Thinking...
-                </h2>
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">You May Be Thinking...</h2>
                 <p className="text-lg text-foreground/70">
-                  A ceramic coating will protect your ride from the elements, keep your vehicle looking clean longer, and make washing a breeze! Long gone are the days of spending the whole afternoon washing your car! Instead a quick wash will uncover the added glossy look of your ceramic coating!
+                  A ceramic coating will protect your ride from the elements, keep your vehicle looking clean longer,
+                  and make washing a breeze! Long gone are the days of spending the whole afternoon washing your car!
+                  Instead a quick wash will uncover the added glossy look of your ceramic coating!
                 </p>
               </div>
-              
+
               {/* Image Placeholder */}
               <div className="aspect-[4/3] rounded-xl border-2 border-dashed border-border bg-card/50 flex items-center justify-center">
                 <div className="text-center p-8">
@@ -157,30 +156,36 @@ const CeramicCoating = () => {
                 </div>
               </div>
             </div>
-            
+
             <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
               <div className="glass-card p-8 text-center card-hover">
                 <div className="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center mx-auto mb-6">
                   <Shield className="w-8 h-8 text-primary" />
                 </div>
                 <h3 className="text-xl font-bold mb-3">Hardened Layer of Protection</h3>
-                <p className="text-foreground/60">Superior defense against environmental contaminants and chemical stains.</p>
+                <p className="text-foreground/60">
+                  Superior defense against environmental contaminants and chemical stains.
+                </p>
               </div>
-              
+
               <div className="glass-card p-8 text-center card-hover">
                 <div className="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center mx-auto mb-6">
                   <Sparkles className="w-8 h-8 text-primary" />
                 </div>
                 <h3 className="text-xl font-bold mb-3">Wet Glossy Paint Look</h3>
-                <p className="text-foreground/60">Enhanced shine and depth that makes your paint look showroom fresh.</p>
+                <p className="text-foreground/60">
+                  Enhanced shine and depth that makes your paint look showroom fresh.
+                </p>
               </div>
-              
+
               <div className="glass-card p-8 text-center card-hover">
                 <div className="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center mx-auto mb-6">
                   <Droplets className="w-8 h-8 text-primary" />
                 </div>
                 <h3 className="text-xl font-bold mb-3">Easier To Wash & Maintain</h3>
-                <p className="text-foreground/60">Hydrophobic surface repels water, dirt, and grime for effortless cleaning.</p>
+                <p className="text-foreground/60">
+                  Hydrophobic surface repels water, dirt, and grime for effortless cleaning.
+                </p>
               </div>
             </div>
           </div>
@@ -191,9 +196,7 @@ const CeramicCoating = () => {
           <div className="container mx-auto">
             <div className="text-center mb-12">
               <p className="text-primary font-semibold uppercase tracking-wider mb-4">Stays Cleaner Longer</p>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-                Ceramic Coating Package Options
-              </h2>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">Ceramic Coating Package Options</h2>
             </div>
 
             {/* Included With All Packages */}
@@ -220,7 +223,7 @@ const CeramicCoating = () => {
                 <p className="text-lg font-semibold text-primary">Starting at $795</p>
                 <p className="text-sm text-foreground/50">Depending on vehicle size</p>
               </div>
-              
+
               <div className="glass-card p-8 text-center card-hover border-2 border-primary/30 relative">
                 <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground px-4 py-1 rounded-full text-sm font-semibold">
                   Most Popular
@@ -249,7 +252,7 @@ const CeramicCoating = () => {
                 Choose Your Coating <span className="text-gradient-blue">Add-ons</span>
               </h2>
             </div>
-            
+
             <div className="grid sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
               {coatingAddons.map((addon, index) => (
                 <div key={index} className="glass-card p-6 card-hover flex items-start gap-4">
@@ -265,9 +268,7 @@ const CeramicCoating = () => {
             </div>
 
             <div className="text-center mt-12">
-              <Button className="btn-blue text-lg">
-                Price My Vehicle
-              </Button>
+              <Button className="btn-blue text-lg">Price My Vehicle</Button>
               <div className="flex items-center justify-center gap-2 mt-4 text-foreground/60">
                 <Phone className="w-5 h-5" />
                 <span>Call [Your Phone Number]</span>
@@ -284,10 +285,13 @@ const CeramicCoating = () => {
                 See The <span className="text-gradient-blue">Difference</span>
               </h2>
             </div>
-            
+
             <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
               {[1, 2, 3].map((num) => (
-                <div key={num} className="aspect-[4/3] rounded-xl border-2 border-dashed border-border bg-background/50 flex items-center justify-center card-hover">
+                <div
+                  key={num}
+                  className="aspect-[4/3] rounded-xl border-2 border-dashed border-border bg-background/50 flex items-center justify-center card-hover"
+                >
                   <div className="text-center p-6">
                     <ImageIcon className="w-10 h-10 text-foreground/30 mx-auto mb-3" />
                     <p className="text-foreground/50">[Before/After {num}]</p>
@@ -311,17 +315,17 @@ const CeramicCoating = () => {
                   <p className="text-sm text-foreground/30">Professional environment</p>
                 </div>
               </div>
-              
+
               <div className="order-1 lg:order-2">
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
                   Why Choose Us To <span className="text-gradient-blue">Install?</span>
                 </h2>
                 <p className="text-lg text-foreground/70 mb-8">
-                  We strongly believe in transparency which is why our clients love to come back! We thoroughly inspect every vehicle that comes in and share our findings and professional recommendations with you. Our clients love knowing we keep them in the loop during the entire process.
+                  We strongly believe in transparency which is why our clients love to come back! We thoroughly inspect
+                  every vehicle that comes in and share our findings and professional recommendations with you. Our
+                  clients love knowing we keep them in the loop during the entire process.
                 </p>
-                <Button className="btn-blue text-lg">
-                  Get A Quote
-                </Button>
+                <Button className="btn-blue text-lg">Get A Quote</Button>
               </div>
             </div>
           </div>
@@ -335,7 +339,8 @@ const CeramicCoating = () => {
                 How Are Ceramic Coatings <span className="text-gradient-blue">Installed?</span>
               </h2>
               <p className="text-lg text-foreground/70 max-w-3xl mx-auto">
-                Installing a ceramic coating is an extremely tedious process. Below is a breakdown of how ceramic coatings are installed.
+                Installing a ceramic coating is an extremely tedious process. Below is a breakdown of how ceramic
+                coatings are installed.
               </p>
             </div>
 
@@ -361,9 +366,7 @@ const CeramicCoating = () => {
             </div>
 
             <div className="text-center mt-12">
-              <Button className="btn-blue text-lg">
-                Get A Quote
-              </Button>
+              <Button className="btn-blue text-lg">Get A Quote</Button>
               <div className="flex items-center justify-center gap-2 mt-4 text-foreground/60">
                 <Phone className="w-5 h-5" />
                 <span>Call [Your Phone Number]</span>
@@ -389,9 +392,7 @@ const CeramicCoating = () => {
                     <AccordionTrigger className="text-left font-semibold hover:no-underline">
                       {faq.question}
                     </AccordionTrigger>
-                    <AccordionContent className="text-foreground/70">
-                      {faq.answer}
-                    </AccordionContent>
+                    <AccordionContent className="text-foreground/70">{faq.answer}</AccordionContent>
                   </AccordionItem>
                 ))}
               </Accordion>
@@ -406,9 +407,7 @@ const CeramicCoating = () => {
               Ready to Care for <span className="text-gradient-blue">Your Car?</span>
             </h2>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button className="btn-blue text-lg">
-                Get A Quote
-              </Button>
+              <Button className="btn-blue text-lg">Get A Quote</Button>
               <Button variant="outline" className="btn-outline-blue text-lg">
                 <Phone className="mr-2 w-5 h-5" />
                 Call [Your Phone Number]
