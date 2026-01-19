@@ -14,7 +14,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ['General Sans', 'sans-serif'],
+        display: ['Clash Display', 'sans-serif'],
         body: ['General Sans', 'sans-serif'],
       },
       colors: {

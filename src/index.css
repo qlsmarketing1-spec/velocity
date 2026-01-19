@@ -42,6 +42,38 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'Clash Display';
+  src: url('https://cdn.fontshare.com/wf/ND6E7L3VFBHGZJVGXJRT5HX45RQD35B7/QUPWES5NX7XPOFMWQEFNDCLQPKZ4EGJ6/UQKO6KXGNVBP3WWQZWVP6RYGQV3DM2EL.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Clash Display';
+  src: url('https://cdn.fontshare.com/wf/ND6E7L3VFBHGZJVGXJRT5HX45RQD35B7/QUPWES5NX7XPOFMWQEFNDCLQPKZ4EGJ6/S7IXXO5MWPZGMLKHFZWGYCJXSRCBDHLM.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Clash Display';
+  src: url('https://cdn.fontshare.com/wf/ND6E7L3VFBHGZJVGXJRT5HX45RQD35B7/QUPWES5NX7XPOFMWQEFNDCLQPKZ4EGJ6/LS562XNIAG4S7P3SUNI57SUZC5BW5JHI.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Clash Display';
+  src: url('https://cdn.fontshare.com/wf/ND6E7L3VFBHGZJVGXJRT5HX45RQD35B7/QUPWES5NX7XPOFMWQEFNDCLQPKZ4EGJ6/Y3RX53QLRH6TLUFB4ENXPWPQNZ2FQ6HO.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 @layer base {
   :root {
     --background: 0 0% 7%;
@@ -83,7 +115,7 @@
     --charcoal-lighter: 0 0% 18%;
 
     /* Typography */
-    --font-display: 'General Sans', sans-serif;
+    --font-display: 'Clash Display', sans-serif;
     --font-body: 'General Sans', sans-serif;
 
     /* Shadows */
