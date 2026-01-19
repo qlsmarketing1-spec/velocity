@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap');
+@import url('https://api.fontshare.com/v2/css?f[]=general-sans@300,400,500,600,700&display=swap');
 
 @layer base {
   :root {
@@ -45,8 +45,8 @@
     --charcoal-lighter: 0 0% 18%;
 
     /* Typography */
-    --font-display: 'Manrope', sans-serif;
-    --font-body: 'Manrope', sans-serif;
+    --font-display: 'General Sans', sans-serif;
+    --font-body: 'General Sans', sans-serif;
 
     /* Shadows */
     --shadow-blue: 0 4px 30px -5px hsl(210 100% 50% / 0.3);
