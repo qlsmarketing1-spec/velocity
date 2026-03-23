@@ -1,10 +1,16 @@
-import interiorImage from '@/assets/interior-detail.jpg';
-import exteriorImage from '@/assets/exterior-detail.jpg';
-import ceramicImage from '@/assets/ceramic-coating.jpg';
-import polishingImage from '@/assets/polishing.jpg';
+import about1 from '@/assets/about-1.jpg';
+import about2 from '@/assets/about-2.jpg';
+import about3 from '@/assets/about-3.jpg';
+import about4 from '@/assets/about-4.jpg';
+
+const aboutImages = [
+  { src: about1, alt: 'Velocity detailer cleaning car windshield' },
+  { src: about2, alt: 'Professional car detailing close-up' },
+  { src: about3, alt: 'Velocity Car Detailing team at work' },
+  { src: about4, alt: 'Premium auto detailing in Bozeman MT' },
+];
 
 const About = () => {
-  const images = [interiorImage, exteriorImage, ceramicImage, polishingImage];
 
   return (
     <section id="about" className="section-padding bg-card">
@@ -16,7 +22,7 @@ const About = () => {
               <span className="text-gradient-blue">We Got You</span>
             </h2>
             <p className="text-lg text-foreground/80 mb-6 leading-relaxed">
-              At [Your Company], we understand that your vehicle is more than just transportation—it's an extension of your lifestyle. Our expert team brings years of professional detailing experience directly to your location.
+              At Velocity Car Detailing, we understand that your vehicle is more than just transportation—it's an extension of your lifestyle. Our expert team brings years of professional detailing experience directly to your location.
             </p>
             <p className="text-lg text-foreground/80 mb-8 leading-relaxed">
               Using only premium products and cutting-edge techniques, we restore your vehicle to showroom condition. From thorough interior deep cleans to paint correction and ceramic coating, we've got you covered.
@@ -28,14 +34,14 @@ const About = () => {
 
           {/* Image Grid */}
           <div className="grid grid-cols-2 gap-3">
-            {images.map((img, index) => (
+            {aboutImages.map((img, index) => (
               <div
                 key={index}
                 className="aspect-square overflow-hidden rounded-xl card-hover"
               >
                 <img
-                  src={img}
-                  alt={`Detailing work ${index + 1}`}
+                  src={img.src}
+                  alt={img.alt}
                   className="w-full h-full object-cover"
                   loading="lazy"
                 />

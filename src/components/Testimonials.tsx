@@ -17,7 +17,7 @@ const testimonials: Testimonial[] = [
   {
     name: 'Sarah L.',
     location: 'Minnetonka, MN',
-    text: "I've used many detailing services over the years, but [Your Company] is by far the best. Professional, punctual, and the results speak for themselves.",
+    text: "I've used many detailing services over the years, but Velocity Car Detailing is by far the best. Professional, punctual, and the results speak for themselves.",
     rating: 5,
   },
   {

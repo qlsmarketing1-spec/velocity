@@ -2,11 +2,19 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { useEffect } from "react";
+
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+  useEffect(() => { window.scrollTo(0, 0); }, [pathname]);
+  return null;
+};
 import Index from "./pages/Index";
 import CarDetailing from "./pages/CarDetailing";
 import CeramicCoating from "./pages/CeramicCoating";
-import Contact from "./pages/Contact";
+import BoatDetailing from "./pages/BoatDetailing";
+import FleetDetailing from "./pages/FleetDetailing";
 import Blog from "./pages/Blog";
 import NotFound from "./pages/NotFound";
 
@@ -18,11 +26,13 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/car-detailing-[your-city]-[state]" element={<CarDetailing />} />
-          <Route path="/ceramic-coating-[your-city]-[state]" element={<CeramicCoating />} />
-          <Route path="/contact" element={<Contact />} />
+          <Route path="/car-detailing-bozeman-mt" element={<CarDetailing />} />
+          <Route path="/ceramic-coating-bozeman-mt" element={<CeramicCoating />} />
+          <Route path="/boat-detailing-bozeman-mt" element={<BoatDetailing />} />
+          <Route path="/fleet-detailing-bozeman-mt" element={<FleetDetailing />} />
           <Route path="/blog" element={<Blog />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

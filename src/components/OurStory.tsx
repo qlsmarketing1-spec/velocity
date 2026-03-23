@@ -1,4 +1,4 @@
-import ourStoryImage from '@/assets/our-story.jpg';
+import ourStoryImage from '../../Photography/B5135549-4A8D-4128-8DA0-3B0BC257ECC2_1_201_a.jpeg';
 
 const OurStory = () => {
   return (
@@ -15,7 +15,7 @@ const OurStory = () => {
             {/* Story Content */}
             <div className="space-y-6 text-lg text-foreground/80 leading-relaxed">
               <p>
-                [Your Company] was founded with a simple mission: to provide exceptional car detailing services that save our customers time without compromising on quality. What started as a passion for automotive care has grown into a trusted mobile detailing service that the [Your City] community relies on.
+                Velocity Car Detailing was founded with a simple mission: to provide exceptional car detailing services that save our customers time without compromising on quality. What started as a passion for automotive care has grown into a trusted mobile detailing service that the Bozeman community relies on.
               </p>
               
               <p>
@@ -30,11 +30,11 @@ const OurStory = () => {
             {/* Stats */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12 pt-8 border-t border-border">
               <div className="text-center md:text-right">
-                <p className="text-3xl font-bold text-primary mb-1">[X]+</p>
+                <p className="text-3xl font-bold text-primary mb-1">2+</p>
                 <p className="text-xs text-foreground/60 uppercase tracking-wide">Years</p>
               </div>
               <div className="text-center md:text-right">
-                <p className="text-3xl font-bold text-primary mb-1">[X]+</p>
+                <p className="text-3xl font-bold text-primary mb-1">500+</p>
                 <p className="text-xs text-foreground/60 uppercase tracking-wide">Cars</p>
               </div>
               <div className="text-center md:text-right">

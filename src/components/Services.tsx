@@ -3,23 +3,26 @@ import interiorImage from '@/assets/interior-detail.jpg';
 import exteriorImage from '@/assets/exterior-detail.jpg';
 import ceramicImage from '@/assets/ceramic-coating.jpg';
 import paintCorrectionImage from '@/assets/paint-correction.jpg';
-import engineDetailImage from '@/assets/engine-detail.jpg';
-import headlightRestoreImage from '@/assets/headlight-restore.jpg';
+import boatDetailImage from '@/assets/boat-detail.jpg';
+import fleetDetailImage from '@/assets/fleet-detail.jpg';
 
 interface Service {
   title: string;
   description: string;
-  price: string;
+  price?: string;
   image: string;
+  alt: string;
   features: string[];
+  contactOnly?: boolean;
 }
 
 const services: Service[] = [
   {
     title: 'Interior Detailing',
     description: 'Complete interior restoration for a fresh, clean cabin.',
-    price: '$149',
+    price: '$225',
     image: interiorImage,
+    alt: 'Professional interior car detailing in Bozeman MT',
     features: [
       'Deep vacuum & steam cleaning',
       'Leather conditioning',
@@ -30,8 +33,9 @@ const services: Service[] = [
   {
     title: 'Exterior Detailing',
     description: 'Bring back that showroom shine with our exterior package.',
-    price: '$179',
+    price: '$125',
     image: exteriorImage,
+    alt: 'Exterior car detailing and hand wash in Bozeman MT',
     features: [
       'Hand wash & dry',
       'Clay bar treatment',
@@ -42,8 +46,9 @@ const services: Service[] = [
   {
     title: 'Ceramic Coating',
     description: 'Ultimate protection with long-lasting ceramic coating.',
-    price: '$499',
+    price: '$795',
     image: ceramicImage,
+    alt: 'Ceramic coating application on a vehicle in Bozeman MT',
     features: [
       'Paint correction included',
       '2-year protection',
@@ -54,8 +59,9 @@ const services: Service[] = [
   {
     title: 'Paint Correction',
     description: 'Remove swirls, scratches, and oxidation for a flawless finish.',
-    price: '$299',
+    price: '$400',
     image: paintCorrectionImage,
+    alt: 'Paint correction and scratch removal on a vehicle',
     features: [
       'Swirl mark removal',
       'Scratch elimination',
@@ -64,27 +70,29 @@ const services: Service[] = [
     ],
   },
   {
-    title: 'Engine Bay Detail',
-    description: 'Comprehensive engine bay cleaning and dressing.',
-    price: '$89',
-    image: engineDetailImage,
+    title: 'Boat Detailing',
+    description: 'Professional detailing services to keep your boat looking pristine.',
+    image: boatDetailImage,
+    alt: 'Professional boat detailing service in Bozeman MT',
+    contactOnly: true,
     features: [
-      'Degreasing & cleaning',
-      'Plastic & rubber dressing',
-      'Hose & wire detailing',
-      'Protective coating',
+      'Hull wash & polish',
+      'Interior cleaning',
+      'Upholstery treatment',
+      'Protective wax coating',
     ],
   },
   {
-    title: 'Headlight Restoration',
-    description: 'Restore clarity and brightness to foggy headlights.',
-    price: '$79',
-    image: headlightRestoreImage,
+    title: 'Fleet Detailing',
+    description: 'Keep your entire fleet looking sharp and professional.',
+    image: fleetDetailImage,
+    alt: 'Fleet vehicle detailing and commercial car washing',
+    contactOnly: true,
     features: [
-      'Oxidation removal',
-      'Lens polishing',
-      'UV sealant application',
-      'Improved visibility',
+      'Multi-vehicle pricing',
+      'Scheduled maintenance plans',
+      'Interior & exterior detail',
+      'Flexible scheduling',
     ],
   },
 ];
@@ -99,7 +107,7 @@ const Services = () => {
             Our <span className="text-gradient-blue">Services</span>
           </h2>
           <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
-            Professional mobile detailing services tailored to your needs. We come to you, anywhere in the [Your City] area.
+            Professional mobile detailing services tailored to your needs. We come to you, anywhere in the Bozeman area.
           </p>
         </div>
 
@@ -114,7 +122,7 @@ const Services = () => {
               <div className="aspect-video overflow-hidden">
                 <img
                   src={service.image}
-                  alt={service.title}
+                  alt={service.alt}
                   className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                   loading="lazy"
                 />
@@ -137,13 +145,21 @@ const Services = () => {
 
                 {/* Price & CTA */}
                 <div className="flex items-center justify-between pt-4 border-t border-border">
-                  <div>
-                    <span className="text-sm text-foreground/60">Starting at</span>
-                    <p className="text-2xl font-bold text-primary">{service.price}</p>
-                  </div>
-                  <a href="#contact" className="btn-blue text-sm px-6 py-2">
-                    Book Now
-                  </a>
+                  {service.contactOnly ? (
+                    <a href="https://detailprocrm.com/form/3efeeb6b-6094-47cd-98ba-01ae1dbc0ba9" target="_blank" rel="noopener noreferrer" className="btn-blue text-sm px-6 py-2 w-full text-center">
+                      Contact Us
+                    </a>
+                  ) : (
+                    <>
+                      <div>
+                        <span className="text-sm text-foreground/60">Starting at</span>
+                        <p className="text-2xl font-bold text-primary">{service.price}</p>
+                      </div>
+                      <a href="https://detailprocrm.com/book/ed56c048-9b45-4d92-90d2-b55ed2ee5936" target="_blank" rel="noopener noreferrer" className="btn-blue text-sm px-6 py-2">
+                        Book Now
+                      </a>
+                    </>
+                  )}
                 </div>
               </div>
             </div>

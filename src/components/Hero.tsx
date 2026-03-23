@@ -11,6 +11,8 @@ const Hero = () => {
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${heroImage})` }}
+        role="img"
+        aria-label="Velocity Car Detailing professional auto detailing in Bozeman MT"
       />
       
       {/* Dark Overlay */}
@@ -20,22 +22,22 @@ const Hero = () => {
       <div className="relative z-10 container mx-auto px-4 md:px-8 pt-20">
         <div className="max-w-3xl">
           <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-tight animate-fade-up">
-            <span className="text-foreground">[Your City]</span>
+            <span className="text-foreground">Bozeman</span>
             <br />
             <span className="text-gradient-blue">Car Detailing</span>
           </h1>
 
           <p className="mt-6 text-lg md:text-xl text-foreground/80 max-w-xl animate-fade-up delay-100">
-            Your time is valuable. That's why [Your Company] brings professional detailing services right to your doorstep.
+            Your time is valuable. That's why Velocity Car Detailing brings professional detailing services right to your doorstep.
           </p>
 
           <div className="mt-10 flex flex-wrap gap-4 animate-fade-up delay-200">
-            <a href="#contact" className="btn-blue flex items-center gap-2 text-lg">
+            <a href="https://detailprocrm.com/book/ed56c048-9b45-4d92-90d2-b55ed2ee5936" target="_blank" rel="noopener noreferrer" className="btn-blue flex items-center gap-2 text-lg">
               Book Online
               <ArrowRight size={20} />
             </a>
             <a
-              href="tel:[yourphone]"
+              href="tel:+16124345327"
               className="btn-outline-blue flex items-center gap-2 text-lg"
             >
               <Phone size={20} />

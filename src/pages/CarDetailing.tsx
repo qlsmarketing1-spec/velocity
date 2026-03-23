@@ -1,245 +1,393 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { Button } from '@/components/ui/button';
-import { Phone, ExternalLink, Check, ImageIcon } from 'lucide-react';
+import { ExternalLink, Check, ArrowRight } from 'lucide-react';
+import { useSEO } from '@/hooks/useSEO';
+import interiorImg from '@/assets/interior-detail.jpg';
+import exteriorImg from '@/assets/exterior-detail.jpg';
+import paintCorrectionImg from '@/assets/paint-correction.jpg';
+import paintCorrection2stepImg from '@/assets/paint-correction-2step.jpg';
+import about2 from '@/assets/about-2.jpg';
+import about3 from '@/assets/about-3.jpg';
+import fullDetailUltraImg from '@/assets/full-detail-ultra.jpg';
+import heroImg from '@/assets/hero-bg.jpg';
 
-const interiorFeatures = [
-  'Deep Interior Cleaning',
-  'Door Jamb Cleaning',
-  'Streak-Free Glass Cleaning',
-  'Air Purging/Dusting',
-  'Vacuuming',
-  'Cleaning & Protecting Surfaces',
-  'Fabric Guards',
+const BOOKING_URL = 'https://detailprocrm.com/book/ed56c048-9b45-4d92-90d2-b55ed2ee5936';
+const CONTACT_URL = 'https://detailprocrm.com/form/3efeeb6b-6094-47cd-98ba-01ae1dbc0ba9';
+
+interface PricingTier {
+  vehicle: string;
+  price: string;
+}
+
+interface ServiceSection {
+  id: string;
+  title: string;
+  subtitle?: string;
+  description: string;
+  pricing: PricingTier[];
+  pricingNote?: string;
+  features: string[];
+  notes?: string[];
+  image: string;
+  imageAlt: string;
+  flip?: boolean;
+  contactOnly?: boolean;
+}
+
+const services: ServiceSection[] = [
+  {
+    id: 'interior',
+    title: 'Interior Detail',
+    description: 'Want your interior to look and feel new? Look no further than our interior detail package.',
+    pricing: [
+      { vehicle: 'Sedan / Coupe', price: '$225' },
+      { vehicle: 'SUV / Crossover', price: '$265' },
+      { vehicle: 'Large SUV / Minivan / Truck', price: '$295' },
+    ],
+    features: [
+      'Vacuum and steam clean carpets',
+      'Deep clean all hard surfaces including leather, plastic, and vinyl',
+      'Window cleaning',
+      'UV protection on plastics and leather',
+      'Clean door jams',
+    ],
+    notes: [
+      'Additional charges may apply for excessive conditions',
+      'All vehicles are subject to pre-detail inspection',
+    ],
+    image: interiorImg,
+    imageAlt: 'Professional interior car detailing — deep clean and steam treatment',
+    flip: false,
+  },
+  {
+    id: 'exterior-basic',
+    title: 'Exterior Detail',
+    subtitle: 'Basic',
+    description: 'For when your vehicle needs a little extra care. Bring your ride back to looking fresh.',
+    pricing: [
+      { vehicle: 'Sedan / Coupe', price: '$125' },
+      { vehicle: 'SUV / Crossover', price: '$145' },
+      { vehicle: 'Large SUV / Minivan / Truck', price: '$165' },
+    ],
+    features: [
+      'Wheel & tire deep clean',
+      'Gentle hand wash',
+      'Tire dressing',
+      'Exterior plastics dressed',
+    ],
+    notes: [
+      'Excessive tar or other exterior contaminants will result in additional charges',
+      'All vehicles are subject to pre-detail inspection',
+    ],
+    image: exteriorImg,
+    imageAlt: 'Exterior car wash and detailing service in Bozeman MT',
+    flip: true,
+  },
+  {
+    id: 'exterior-ultra',
+    title: 'Exterior Detail',
+    subtitle: 'Ultra Shine',
+    description: 'Our premium exterior package. Everything in Basic plus a deep paint enhancement for a head-turning finish.',
+    pricing: [
+      { vehicle: 'Sedan / Coupe', price: '$335' },
+      { vehicle: 'SUV / Crossover', price: '$375' },
+      { vehicle: 'Large SUV / Minivan / Truck', price: '$405' },
+    ],
+    features: [
+      'Wheel & tire deep clean',
+      'Gentle hand wash',
+      'Clay bar decontamination',
+      'Paint polish & enhancement',
+      '6 month paint protection',
+      'Tire dressing',
+      'Exterior plastics dressed',
+    ],
+    notes: [
+      'Excessive tar or other exterior contaminants will result in additional charges',
+      'All vehicles are subject to pre-detail inspection',
+    ],
+    image: about2,
+    imageAlt: 'Ultra shine paint polish and exterior detailing in Bozeman MT',
+    flip: false,
+  },
+  {
+    id: 'full-basic',
+    title: 'Full Detail',
+    subtitle: 'Basic',
+    description: 'Our most popular package. Give your vehicle the works for a fully refreshed ride.',
+    pricing: [
+      { vehicle: 'Sedan / Coupe', price: '$315' },
+      { vehicle: 'SUV / Crossover', price: '$355' },
+      { vehicle: 'Large SUV / Minivan / Truck', price: '$405' },
+    ],
+    features: [
+      'Full interior detail',
+      'Wheel & tire deep clean',
+      'Gentle hand wash',
+      'Tire dressing',
+    ],
+    notes: [
+      'Additional charges may apply for excessive conditions',
+      'Excessive tar or other exterior contaminants will result in additional charges',
+      'All vehicles are subject to pre-detail inspection',
+    ],
+    image: about3,
+    imageAlt: 'Full car detail service — interior and exterior in Bozeman MT',
+    flip: true,
+  },
+  {
+    id: 'full-ultra',
+    title: 'Full Detail',
+    subtitle: 'Ultra Shine',
+    description: 'The ultimate Velocity experience. A complete interior detail paired with our Ultra Shine exterior package for a showroom-quality result.',
+    pricing: [
+      { vehicle: 'Sedan / Coupe', price: '$475' },
+      { vehicle: 'SUV / Crossover', price: '$525' },
+      { vehicle: 'Large SUV / Minivan / Truck', price: '$590' },
+    ],
+    features: [
+      'Full interior detail',
+      'Wheel & tire deep clean',
+      'Gentle hand wash',
+      'Clay bar decontamination',
+      'Paint polish & enhancement',
+      '6 month paint protection',
+      'Tire dressing',
+      'Exterior plastics dressed',
+    ],
+    notes: [
+      'Additional charges may apply for excessive conditions',
+      'Excessive tar or other exterior contaminants will result in additional charges',
+      'All vehicles are subject to pre-detail inspection',
+    ],
+    image: fullDetailUltraImg,
+    imageAlt: 'Full detail ultra shine package — complete auto detailing Bozeman MT',
+    flip: false,
+  },
+  {
+    id: 'paint-1step',
+    title: 'Paint Correction',
+    subtitle: '1-Step',
+    description: 'Remove around 60% of surface imperfections including swirls, light scratches, and water spots. We highly recommend adding ceramic coating afterwards to protect your freshly corrected paint.',
+    pricing: [
+      { vehicle: 'Sedan / Coupe', price: '$400' },
+      { vehicle: 'SUV / Crossover', price: '$500' },
+      { vehicle: 'Large SUV / Minivan / Truck', price: '$600' },
+    ],
+    features: [
+      '~60% imperfection removal',
+      'Swirl mark elimination',
+      'Light scratch removal',
+      'Water spot treatment',
+      'Single-stage machine polish',
+      'High-gloss finish',
+    ],
+    image: paintCorrectionImg,
+    imageAlt: 'One-step paint correction and swirl removal in Bozeman MT',
+    flip: true,
+  },
+  {
+    id: 'paint-2step',
+    title: 'Paint Correction',
+    subtitle: '2-Step',
+    description: 'Our most thorough paint correction — removes around 80% of imperfections. Best for dark-colored cars, especially black. An in-person inspection is required before a final quote.',
+    pricing: [
+      { vehicle: 'Sedan / Coupe', price: '$600' },
+      { vehicle: 'SUV / Crossover', price: '$725' },
+      { vehicle: 'Large SUV / Minivan / Truck', price: '$850' },
+    ],
+    pricingNote: 'In-person inspection required for final quote',
+    features: [
+      '~80% imperfection removal',
+      'Deep swirl & scratch correction',
+      'Oxidation removal',
+      'Two-stage machine polish',
+      'Best results on dark/black vehicles',
+      'Ceramic coating highly recommended',
+    ],
+    image: paintCorrection2stepImg,
+    imageAlt: 'Two-step paint correction for dark cars in Bozeman MT',
+    flip: false,
+    contactOnly: true,
+  },
 ];
 
-const exteriorFeatures = [
-  'Hand Wash & Dry',
-  'Wheel & Tire Cleaning',
-  'Tire Dressing',
-  'Door Jamb Cleaning',
-  'Trim Restoration',
-  'Paint Sealant Application',
-  'Glass Treatment',
-];
+const PricingTable = ({ tiers, note }: { tiers: PricingTier[]; note?: string }) => (
+  <div className="mb-8">
+    <div className="rounded-xl overflow-hidden border border-border">
+      {tiers.map((tier, i) => (
+        <div
+          key={i}
+          className={`flex justify-between items-center px-5 py-3 ${
+            i % 2 === 0 ? 'bg-background/50' : 'bg-card'
+          }`}
+        >
+          <span className="text-foreground/80 text-sm font-medium">{tier.vehicle}</span>
+          <span className="text-primary font-bold text-lg">{tier.price}</span>
+        </div>
+      ))}
+    </div>
+    {note && (
+      <p className="mt-2 text-sm text-primary/80 italic font-medium">{note}</p>
+    )}
+  </div>
+);
 
-const fullDetailFeatures = [
-  'Complete Interior Detail',
-  'Complete Exterior Detail',
-  'Engine Bay Cleaning',
-  'Clay Bar Treatment',
-  'Paint Decontamination',
-  'Leather Conditioning',
-  'Premium Paint Sealant',
-  'Odor Elimination',
-];
+const carDetailingSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Car Detailing',
+  description: 'Professional auto detailing services in Bozeman, MT including interior, exterior, full detail, and paint correction packages.',
+  provider: {
+    '@type': 'LocalBusiness',
+    name: 'Velocity Car Detailing',
+    url: 'https://velocitycardetailing.com',
+    areaServed: 'Bozeman, MT',
+  },
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Auto Detailing Packages',
+    itemListElement: services.map((service) => ({
+      '@type': 'OfferCatalog',
+      name: service.subtitle ? `${service.title} — ${service.subtitle}` : service.title,
+      description: service.description,
+      itemListElement: service.pricing.map((tier) => ({
+        '@type': 'Offer',
+        name: tier.vehicle,
+        price: tier.price.replace('$', ''),
+        priceCurrency: 'USD',
+      })),
+    })),
+  },
+  url: 'https://velocitycardetailing.com/car-detailing-bozeman-mt',
+};
 
 const CarDetailing = () => {
+  useSEO({
+    title: 'Car Detailing Bozeman MT | Velocity Car Detailing',
+    description:
+      'Professional auto detailing in Bozeman, MT. Interior, exterior, paint correction, and full detail packages starting at $125. Book online today.',
+    canonical: '/car-detailing-bozeman-mt',
+    jsonLd: carDetailingSchema,
+  });
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      
+
       <main>
         {/* Hero Section */}
-        <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
-          {/* Background Image Placeholder */}
-          <div className="absolute inset-0 bg-card flex items-center justify-center">
-            <div className="text-center text-foreground/30">
-              <ImageIcon className="w-24 h-24 mx-auto mb-4" />
-              <p className="text-lg">Hero Background Image</p>
-              <p className="text-sm">(1920x1080 recommended)</p>
-            </div>
-          </div>
-          
-          {/* Overlay */}
+        <section
+          className="relative min-h-[60vh] flex items-center justify-center overflow-hidden"
+        >
+          <div
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+            style={{ backgroundImage: `url(${heroImg})` }}
+            role="img"
+            aria-label="Velocity Car Detailing professional auto detailing in Bozeman MT"
+          />
           <div className="absolute inset-0 bg-background/70" />
-          
-          {/* Content */}
           <div className="relative z-10 text-center px-4">
             <p className="text-foreground/70 text-lg mb-4">
-              Professional Car Detailing [Your City], [State]
+              Professional Car Detailing — Bozeman, MT
             </p>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8">
               Professional <span className="text-gradient-blue">Auto Detailing</span>
             </h1>
-            <Button 
-              size="lg" 
-              className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-lg"
+            <a
+              href={BOOKING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-blue inline-flex items-center gap-2 text-lg"
             >
-              <Phone className="w-5 h-5 mr-2" />
-              Call Now to Book
-              <span className="ml-2 font-semibold">(XXX) XXX-XXXX</span>
-            </Button>
+              Book Online
+              <ArrowRight size={20} />
+            </a>
           </div>
         </section>
 
-        {/* Interior Detail Section */}
-        <section className="py-16 lg:py-24 bg-card">
-          <div className="container mx-auto px-4">
-            <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-              {/* Content */}
-              <div className="order-2 lg:order-1">
-                <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                  Interior Detailing Services
-                </h2>
-                <p className="text-primary text-xl font-semibold italic mb-6">
-                  Starting at $XXX
-                </p>
-                
-                <ul className="space-y-3 mb-8">
-                  {interiorFeatures.map((feature, index) => (
-                    <li key={index} className="flex items-center gap-3">
-                      <Check className="w-5 h-5 text-primary flex-shrink-0" />
-                      <span className="text-foreground/80 uppercase tracking-wide text-sm font-medium">
-                        {feature}
+        {/* Service Sections */}
+        {services.map((service, index) => (
+          <section
+            key={service.id}
+            id={service.id}
+            className={`py-16 lg:py-24 ${index % 2 === 0 ? 'bg-card' : 'bg-background'}`}
+          >
+            <div className="container mx-auto px-4">
+              <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+                {/* Content */}
+                <div className={service.flip ? 'order-2 lg:order-2' : 'order-2 lg:order-1'}>
+                  <div className="mb-2">
+                    <h2 className="text-3xl md:text-4xl font-bold inline">
+                      {service.title}
+                    </h2>
+                    {service.subtitle && (
+                      <span className="ml-3 text-primary text-2xl md:text-3xl font-bold">
+                        — {service.subtitle}
                       </span>
-                    </li>
-                  ))}
-                </ul>
-                
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <Button 
-                    size="lg" 
-                    className="bg-primary hover:bg-primary/90 text-primary-foreground"
-                  >
-                    <Phone className="w-5 h-5 mr-2" />
-                    Call to Book
-                  </Button>
-                  <Button 
-                    size="lg" 
-                    variant="outline"
-                    className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
-                  >
-                    <ExternalLink className="w-5 h-5 mr-2" />
-                    Book Online
-                  </Button>
+                    )}
+                  </div>
+                  <p className="text-foreground/70 mb-6 leading-relaxed">{service.description}</p>
+
+                  <PricingTable tiers={service.pricing} note={service.pricingNote} />
+
+                  <ul className="space-y-2 mb-6">
+                    {service.features.map((feature, i) => (
+                      <li key={i} className="flex items-start gap-3">
+                        <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                        <span className="text-foreground/80 text-sm font-medium">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  {service.notes && (
+                    <ul className="space-y-1 mb-8">
+                      {service.notes.map((note, i) => (
+                        <li key={i} className="text-foreground/50 text-xs italic">
+                          *{note}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+
+                  {service.contactOnly ? (
+                    <a
+                      href={CONTACT_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn-blue inline-flex items-center gap-2"
+                    >
+                      Contact Us
+                      <ArrowRight size={18} />
+                    </a>
+                  ) : (
+                    <a
+                      href={BOOKING_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn-blue inline-flex items-center gap-2"
+                    >
+                      Book Online
+                      <ExternalLink size={18} />
+                    </a>
+                  )}
                 </div>
-              </div>
-              
-              {/* Image Placeholder */}
-              <div className="order-1 lg:order-2">
-                <div className="aspect-[4/3] bg-background rounded-lg flex items-center justify-center border border-border">
-                  <div className="text-center text-foreground/30">
-                    <ImageIcon className="w-16 h-16 mx-auto mb-3" />
-                    <p className="text-sm">Interior Detail Image</p>
+
+                {/* Image */}
+                <div className={service.flip ? 'order-1 lg:order-1' : 'order-1 lg:order-2'}>
+                  <div className="aspect-[4/3] rounded-xl overflow-hidden">
+                    <img
+                      src={service.image}
+                      alt={service.imageAlt}
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                    />
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-        </section>
-
-        {/* Exterior Detail Section */}
-        <section className="py-16 lg:py-24 bg-background">
-          <div className="container mx-auto px-4">
-            <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-              {/* Image Placeholder */}
-              <div>
-                <div className="aspect-[4/3] bg-card rounded-lg flex items-center justify-center border border-border">
-                  <div className="text-center text-foreground/30">
-                    <ImageIcon className="w-16 h-16 mx-auto mb-3" />
-                    <p className="text-sm">Exterior Detail Image</p>
-                  </div>
-                </div>
-              </div>
-              
-              {/* Content */}
-              <div>
-                <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                  Exterior Detailing Services
-                </h2>
-                <p className="text-primary text-xl font-semibold italic mb-6">
-                  Starting at $XXX
-                </p>
-                
-                <ul className="space-y-3 mb-8">
-                  {exteriorFeatures.map((feature, index) => (
-                    <li key={index} className="flex items-center gap-3">
-                      <Check className="w-5 h-5 text-primary flex-shrink-0" />
-                      <span className="text-foreground/80 uppercase tracking-wide text-sm font-medium">
-                        {feature}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-                
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <Button 
-                    size="lg" 
-                    className="bg-primary hover:bg-primary/90 text-primary-foreground"
-                  >
-                    <Phone className="w-5 h-5 mr-2" />
-                    Call to Book
-                  </Button>
-                  <Button 
-                    size="lg" 
-                    variant="outline"
-                    className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
-                  >
-                    <ExternalLink className="w-5 h-5 mr-2" />
-                    Book Online
-                  </Button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Full Detail Section */}
-        <section className="py-16 lg:py-24 bg-card">
-          <div className="container mx-auto px-4">
-            <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-              {/* Content */}
-              <div className="order-2 lg:order-1">
-                <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                  Full Detail Package
-                </h2>
-                <p className="text-primary text-xl font-semibold italic mb-6">
-                  Starting at $XXX
-                </p>
-                
-                <ul className="space-y-3 mb-8">
-                  {fullDetailFeatures.map((feature, index) => (
-                    <li key={index} className="flex items-center gap-3">
-                      <Check className="w-5 h-5 text-primary flex-shrink-0" />
-                      <span className="text-foreground/80 uppercase tracking-wide text-sm font-medium">
-                        {feature}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-                
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <Button 
-                    size="lg" 
-                    className="bg-primary hover:bg-primary/90 text-primary-foreground"
-                  >
-                    <Phone className="w-5 h-5 mr-2" />
-                    Call to Book
-                  </Button>
-                  <Button 
-                    size="lg" 
-                    variant="outline"
-                    className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
-                  >
-                    <ExternalLink className="w-5 h-5 mr-2" />
-                    Book Online
-                  </Button>
-                </div>
-              </div>
-              
-              {/* Image Placeholder */}
-              <div className="order-1 lg:order-2">
-                <div className="aspect-[4/3] bg-background rounded-lg flex items-center justify-center border border-border">
-                  <div className="text-center text-foreground/30">
-                    <ImageIcon className="w-16 h-16 mx-auto mb-3" />
-                    <p className="text-sm">Full Detail Image</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+          </section>
+        ))}
 
         {/* CTA Section */}
         <section className="py-16 lg:py-24 bg-primary/10">
@@ -248,25 +396,17 @@ const CarDetailing = () => {
               Ready to Transform Your Vehicle?
             </h2>
             <p className="text-foreground/70 text-lg mb-8 max-w-2xl mx-auto">
-              Book your professional car detailing service today and experience the difference.
+              Book your professional detailing service today and experience the Velocity difference.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                size="lg" 
-                className="bg-primary hover:bg-primary/90 text-primary-foreground px-8"
-              >
-                <Phone className="w-5 h-5 mr-2" />
-                Call Now: (XXX) XXX-XXXX
-              </Button>
-              <Button 
-                size="lg" 
-                variant="outline"
-                className="border-primary text-primary hover:bg-primary hover:text-primary-foreground px-8"
-              >
-                <ExternalLink className="w-5 h-5 mr-2" />
-                Book Online
-              </Button>
-            </div>
+            <a
+              href={BOOKING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-blue inline-flex items-center gap-2 text-lg"
+            >
+              Book Online
+              <ArrowRight size={20} />
+            </a>
           </div>
         </section>
       </main>

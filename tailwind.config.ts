@@ -14,8 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ['Clash Display', 'sans-serif'],
-        body: ['General Sans', 'sans-serif'],
+        display: ['Norwester', 'sans-serif'],
+        body: ['DM Sans', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",

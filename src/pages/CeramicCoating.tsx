@@ -1,101 +1,165 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { Button } from "@/components/ui/button";
-import { Image as ImageIcon, Check, Shield, Sparkles, Droplets, Phone, ChevronRight } from "lucide-react";
+import { Check, Shield, Sparkles, Droplets, ChevronRight, ArrowRight } from "lucide-react";
+import { useSEO } from "@/hooks/useSEO";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import ceramicHeroImg from "@/assets/ceramic-hero.jpg";
+import gallery1Img from "@/assets/ceramic-gallery-1.jpg";
+import gallery2Img from "@/assets/ceramic-gallery-2.jpg";
+import gallery3Img from "@/assets/ceramic-gallery-3.jpg";
+import whyUsImg from "@/assets/ceramic-why-us.jpg";
+import step1Img from "@/assets/ceramic-step-1.jpg";
+import step2Img from "@/assets/ceramic-step-2.jpg";
+import step3Img from "@/assets/ceramic-step-3.jpg";
+import step4Img from "@/assets/ceramic-step-4.jpg";
+
+const CONTACT_URL = "https://detailprocrm.com/form/3efeeb6b-6094-47cd-98ba-01ae1dbc0ba9";
+
+const packageInclusions = [
+  "Full decontamination wash",
+  "One Step Paint Enhancement",
+  "Tires Cleaned & Dressed",
+  "Reported to CarFax",
+  "FREE Care Kit",
+  "Aftercare Support",
+];
+
+const coatingAddons = [
+  {
+    title: "Wheel Face Ceramic Coating",
+    description: "For ease of cleaning",
+  },
+  {
+    title: "Wheels Off: Wheel Barrels & Calipers",
+    description: "Coating for further ease of cleaning where the details matter",
+  },
+  {
+    title: "Paint Correction Polish",
+    description: "To remove deeper swirls and scratches",
+  },
+  {
+    title: "Windshield & Windows",
+    description: "Ceramic coating for ease of cleaning and improved visibility/safety",
+  },
+];
+
+const installationSteps = [
+  {
+    step: 1,
+    title: "Clean & Decontaminate",
+    description:
+      "Quality ceramic coatings require quality paint preparation. Step one is a triple decontamination wash with iron removal and a clay process.",
+    image: step1Img,
+    alt: "Car decontamination wash and clay bar treatment — ceramic coating prep in Bozeman MT",
+  },
+  {
+    step: 2,
+    title: "Inspection",
+    description:
+      "Once your vehicle is clean, we can get a better look at the condition of the paint and recommend the best course of action to suit your needs.",
+    image: step2Img,
+    alt: "Paint inspection before ceramic coating application in Bozeman MT",
+  },
+  {
+    step: 3,
+    title: "Paint Correction aka Swirl Removal",
+    description:
+      "No matter the age of your vehicle, we will polish to make sure the paint is as clean as possible. You can stick with our included enhancement polish or achieve a near-perfect look with scratch removal.",
+    image: step3Img,
+    alt: "Paint correction and swirl removal before ceramic coating in Bozeman MT",
+  },
+  {
+    step: 4,
+    title: "Wiped, Coated, & Cured",
+    description:
+      "Ceramic coating is a systematic process: timing and teamwork is everything. Then we wait for the coating to cure in a temperature controlled environment.",
+    image: step4Img,
+    alt: "Ceramic coating application and curing process in Bozeman MT",
+  },
+];
+
+const faqs = [
+  {
+    question: "Do ceramic coatings prevent rock chips?",
+    answer:
+      "No, ceramic coatings do not prevent rock chips. They provide protection against chemical stains, UV rays, and minor scratches, but for rock chip protection, you would need Paint Protection Film (PPF).",
+  },
+  {
+    question: "What's the difference between coatings and wax?",
+    answer:
+      "Ceramic coatings chemically bond with your paint and last 2-5+ years, while wax sits on top of the paint and typically lasts only a few weeks to months. Coatings provide superior protection and a longer-lasting shine.",
+  },
+  {
+    question: "Where can you apply a ceramic coating?",
+    answer:
+      "Ceramic coatings can be applied to paint, wheels, glass, plastic trim, and interior surfaces. Each area may require a specific type of coating formulated for that surface.",
+  },
+  {
+    question: "What will a ceramic coating look like?",
+    answer:
+      "A properly applied ceramic coating enhances your paint's gloss and depth, giving it a wet, candy-like appearance. It also makes the surface extremely hydrophobic, causing water to bead and sheet off.",
+  },
+  {
+    question: "What is ceramic coating?",
+    answer:
+      "Ceramic coating is a liquid polymer applied to the exterior of a vehicle. It chemically bonds with the factory paint, creating a protective layer that enhances the vehicle's appearance and provides long-lasting protection against environmental contaminants.",
+  },
+  {
+    question: "How long does a ceramic coating last?",
+    answer: "Depending on the product and maintenance, ceramic coatings can last anywhere from 2 to 5 years or more.",
+  },
+  {
+    question: "How to maintain ceramic coating?",
+    answer:
+      "To maintain ceramic coating, regular washing with pH-neutral soap and avoiding harsh chemicals is recommended. Additionally, periodic reapplication of a maintenance product can help extend the life of the coating.",
+  },
+];
+
+const ceramicServiceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Ceramic Coating',
+  description:
+    'Professional ceramic coating application for vehicles in Bozeman, MT. Includes full decontamination wash, paint enhancement, and a 2- or 5-year warranty.',
+  provider: {
+    '@type': 'LocalBusiness',
+    name: 'Velocity Car Detailing',
+    url: 'https://velocitycardetailing.com',
+    areaServed: 'Bozeman, MT',
+  },
+  offers: [
+    {
+      '@type': 'Offer',
+      name: '2-Year Ceramic Coating',
+      price: '795',
+      priceCurrency: 'USD',
+      priceSpecification: { '@type': 'UnitPriceSpecification', description: 'Starting price, varies by vehicle size' },
+    },
+  ],
+  url: 'https://velocitycardetailing.com/ceramic-coating-bozeman-mt',
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((faq) => ({
+    '@type': 'Question',
+    name: faq.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: faq.answer,
+    },
+  })),
+};
 
 const CeramicCoating = () => {
-  const packageInclusions = [
-    "Full decontamination wash",
-    "One Step Paint Enhancement",
-    "Tires Cleaned & Dressed",
-    "Reported to CarFax",
-    "FREE Care Kit",
-    "Aftercare Support",
-  ];
-
-  const coatingAddons = [
-    {
-      title: "Wheel Face Ceramic Coating",
-      description: "For ease of cleaning",
-    },
-    {
-      title: "Wheels Off: Wheel Barrels & Calipers",
-      description: "Coating for further ease of cleaning where the details matter",
-    },
-    {
-      title: "Paint Correction Polish",
-      description: "To remove deeper swirls and scratches",
-    },
-    {
-      title: "Windshield & Windows",
-      description: "Ceramic coating for ease of cleaning and improved visibility/safety",
-    },
-  ];
-
-  const installationSteps = [
-    {
-      step: 1,
-      title: "Clean & Decontaminate",
-      description:
-        "Quality ceramic coatings require quality paint preparation. Step one is a triple decontamination wash with iron removal and a clay process.",
-    },
-    {
-      step: 2,
-      title: "Inspection",
-      description:
-        "Once your vehicle is clean, we can get a better look at the condition of the paint and recommend the best course of action to suit your needs.",
-    },
-    {
-      step: 3,
-      title: "Paint Correction aka Swirl Removal",
-      description:
-        "No matter the age of your vehicle, we will polish to make sure the paint is as clean as possible. You can stick with our included enhancement polish or achieve a near-perfect look with scratch removal.",
-    },
-    {
-      step: 4,
-      title: "Wiped, Coated, & Cured",
-      description:
-        "Ceramic coating is a systematic process: timing and teamwork is everything. Then we wait for the coating to cure in a temperature controlled environment.",
-    },
-  ];
-
-  const faqs = [
-    {
-      question: "Do ceramic coatings prevent rock chips?",
-      answer:
-        "No, ceramic coatings do not prevent rock chips. They provide protection against chemical stains, UV rays, and minor scratches, but for rock chip protection, you would need Paint Protection Film (PPF).",
-    },
-    {
-      question: "What's the difference between coatings and wax?",
-      answer:
-        "Ceramic coatings chemically bond with your paint and last 2-5+ years, while wax sits on top of the paint and typically lasts only a few weeks to months. Coatings provide superior protection and a longer-lasting shine.",
-    },
-    {
-      question: "Where can you apply a ceramic coating?",
-      answer:
-        "Ceramic coatings can be applied to paint, wheels, glass, plastic trim, and interior surfaces. Each area may require a specific type of coating formulated for that surface.",
-    },
-    {
-      question: "What will a ceramic coating look like?",
-      answer:
-        "A properly applied ceramic coating enhances your paint's gloss and depth, giving it a wet, candy-like appearance. It also makes the surface extremely hydrophobic, causing water to bead and sheet off.",
-    },
-    {
-      question: "What is ceramic coating?",
-      answer:
-        "Ceramic coating is a liquid polymer applied to the exterior of a vehicle. It chemically bonds with the factory paint, creating a protective layer that enhances the vehicle's appearance and provides long-lasting protection against environmental contaminants.",
-    },
-    {
-      question: "How long does a ceramic coating last?",
-      answer: "Depending on the product and maintenance, ceramic coatings can last anywhere from 2 to 5 years or more.",
-    },
-    {
-      question: "How to maintain ceramic coating?",
-      answer:
-        "To maintain ceramic coating, regular washing with pH-neutral soap and avoiding harsh chemicals is recommended. Additionally, periodic reapplication of a maintenance product can help extend the life of the coating.",
-    },
-  ];
+  useSEO({
+    title: 'Ceramic Coating Bozeman MT | Velocity Car Detailing',
+    description:
+      'Professional ceramic coating services in Bozeman, MT. 2-year and 5-year packages starting at $795. Protect your paint with a long-lasting hydrophobic coating.',
+    canonical: '/ceramic-coating-bozeman-mt',
+    jsonLd: [ceramicServiceSchema, faqSchema],
+  });
 
   return (
     <div className="min-h-screen bg-background">
@@ -104,15 +168,12 @@ const CeramicCoating = () => {
       <main className="pt-24">
         {/* Hero Section */}
         <section className="relative min-h-[70vh] flex items-center overflow-hidden">
-          {/* Hero Background Image Placeholder */}
-          <div className="absolute inset-0 bg-card">
-            <div className="absolute inset-0 flex items-center justify-center border-2 border-dashed border-border">
-              <div className="text-center p-8">
-                <ImageIcon className="w-16 h-16 text-foreground/30 mx-auto mb-4" />
-                <p className="text-foreground/50">[Hero Background Image]</p>
-                <p className="text-sm text-foreground/30">Recommended: 1920x1080</p>
-              </div>
-            </div>
+          <div className="absolute inset-0">
+            <img
+              src={ceramicHeroImg}
+              alt="Professional ceramic coating service in Bozeman MT — glossy paint protection"
+              className="w-full h-full object-cover"
+            />
             <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/70 to-transparent" />
           </div>
 
@@ -122,13 +183,16 @@ const CeramicCoating = () => {
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
                 Professional <span className="text-gradient-blue">Ceramic Coatings</span>
               </h1>
-              <p className="text-lg md:text-xl text-foreground/70 mb-8">Your Ceramic Coating Experts</p>
+              <p className="text-lg md:text-xl text-foreground/70 mb-8">Your Ceramic Coating Experts in Bozeman, MT</p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button className="btn-blue text-lg">Get A Quote</Button>
-                <Button variant="outline" className="btn-outline-blue text-lg">
+                <a href={CONTACT_URL} target="_blank" rel="noopener noreferrer" className="btn-blue inline-flex items-center gap-2 text-lg">
+                  Get A Quote
+                  <ArrowRight size={20} />
+                </a>
+                <a href="#packages" className="btn-outline-blue inline-flex items-center gap-2 text-lg">
                   View Packages
-                  <ChevronRight className="ml-2 w-5 h-5" />
-                </Button>
+                  <ChevronRight size={20} />
+                </a>
               </div>
             </div>
           </div>
@@ -148,13 +212,16 @@ const CeramicCoating = () => {
                 </p>
               </div>
 
-              {/* Image Placeholder */}
-              <div className="aspect-[4/3] rounded-xl border-2 border-dashed border-border bg-card/50 flex items-center justify-center">
-                <div className="text-center p-8">
-                  <ImageIcon className="w-12 h-12 text-foreground/30 mx-auto mb-3" />
-                  <p className="text-foreground/50">[Ceramic Coated Car Image]</p>
-                  <p className="text-sm text-foreground/30">Water beading / glossy finish</p>
-                </div>
+              {/* YouTube Video */}
+              <div className="aspect-video rounded-xl overflow-hidden">
+                <iframe
+                  src="https://www.youtube.com/embed/c_XgoOZqzuI"
+                  title="Ceramic coating water beading and glossy finish demonstration"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="w-full h-full"
+                  loading="lazy"
+                />
               </div>
             </div>
 
@@ -193,7 +260,7 @@ const CeramicCoating = () => {
         </section>
 
         {/* Package Options Section */}
-        <section className="section-padding bg-card">
+        <section id="packages" className="section-padding bg-card">
           <div className="container mx-auto">
             <div className="text-center mb-12">
               <p className="text-primary font-semibold uppercase tracking-wider mb-4">Stays Cleaner Longer</p>
@@ -269,11 +336,10 @@ const CeramicCoating = () => {
             </div>
 
             <div className="text-center mt-12">
-              <Button className="btn-blue text-lg">Price My Vehicle</Button>
-              <div className="flex items-center justify-center gap-2 mt-4 text-foreground/60">
-                <Phone className="w-5 h-5" />
-                <span>Call [Your Phone Number]</span>
-              </div>
+              <a href={CONTACT_URL} target="_blank" rel="noopener noreferrer" className="btn-blue inline-flex items-center gap-2 text-lg">
+                Price My Vehicle
+                <ArrowRight size={20} />
+              </a>
             </div>
           </div>
         </section>
@@ -288,18 +354,30 @@ const CeramicCoating = () => {
             </div>
 
             <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-              {[1, 2, 3].map((num) => (
-                <div
-                  key={num}
-                  className="aspect-[4/3] rounded-xl border-2 border-dashed border-border bg-background/50 flex items-center justify-center card-hover"
-                >
-                  <div className="text-center p-6">
-                    <ImageIcon className="w-10 h-10 text-foreground/30 mx-auto mb-3" />
-                    <p className="text-foreground/50">[Before/After {num}]</p>
-                    <p className="text-sm text-foreground/30">Transformation photo</p>
-                  </div>
-                </div>
-              ))}
+              <div className="aspect-[4/3] rounded-xl overflow-hidden card-hover">
+                <img
+                  src={gallery1Img}
+                  alt="Ceramic coating results — deep gloss and paint protection on a vehicle in Bozeman MT"
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <div className="aspect-[4/3] rounded-xl overflow-hidden card-hover">
+                <img
+                  src={gallery2Img}
+                  alt="Hydrophobic water beading effect after ceramic coating application in Bozeman MT"
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <div className="aspect-[4/3] rounded-xl overflow-hidden card-hover">
+                <img
+                  src={gallery3Img}
+                  alt="Showroom shine and paint protection from professional ceramic coating in Bozeman MT"
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
             </div>
           </div>
         </section>
@@ -308,13 +386,13 @@ const CeramicCoating = () => {
         <section className="section-padding">
           <div className="container mx-auto">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
-              {/* Image Placeholder */}
-              <div className="aspect-square rounded-xl border-2 border-dashed border-border bg-card/50 flex items-center justify-center order-2 lg:order-1">
-                <div className="text-center p-8">
-                  <ImageIcon className="w-12 h-12 text-foreground/30 mx-auto mb-3" />
-                  <p className="text-foreground/50">[Team / Shop Image]</p>
-                  <p className="text-sm text-foreground/30">Professional environment</p>
-                </div>
+              <div className="aspect-square rounded-xl overflow-hidden order-2 lg:order-1">
+                <img
+                  src={whyUsImg}
+                  alt="Velocity Car Detailing team — professional ceramic coating installers in Bozeman MT"
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
               </div>
 
               <div className="order-1 lg:order-2">
@@ -326,7 +404,10 @@ const CeramicCoating = () => {
                   every vehicle that comes in and share our findings and professional recommendations with you. Our
                   clients love knowing we keep them in the loop during the entire process.
                 </p>
-                <Button className="btn-blue text-lg">Get A Quote</Button>
+                <a href={CONTACT_URL} target="_blank" rel="noopener noreferrer" className="btn-blue inline-flex items-center gap-2 text-lg">
+                  Get A Quote
+                  <ArrowRight size={20} />
+                </a>
               </div>
             </div>
           </div>
@@ -348,12 +429,13 @@ const CeramicCoating = () => {
             <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
               {installationSteps.map((step) => (
                 <div key={step.step} className="glass-card p-8 card-hover">
-                  {/* Step Image Placeholder */}
-                  <div className="aspect-video rounded-lg border-2 border-dashed border-border bg-background/50 flex items-center justify-center mb-6">
-                    <div className="text-center p-4">
-                      <ImageIcon className="w-8 h-8 text-foreground/30 mx-auto mb-2" />
-                      <p className="text-sm text-foreground/40">[Step {step.step} Image]</p>
-                    </div>
+                  <div className="aspect-video rounded-lg overflow-hidden mb-6">
+                    <img
+                      src={step.image}
+                      alt={step.alt}
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                    />
                   </div>
                   <div className="flex items-center gap-4 mb-4">
                     <div className="w-12 h-12 rounded-full gradient-blue flex items-center justify-center flex-shrink-0">
@@ -367,11 +449,10 @@ const CeramicCoating = () => {
             </div>
 
             <div className="text-center mt-12">
-              <Button className="btn-blue text-lg">Get A Quote</Button>
-              <div className="flex items-center justify-center gap-2 mt-4 text-foreground/60">
-                <Phone className="w-5 h-5" />
-                <span>Call [Your Phone Number]</span>
-              </div>
+              <a href={CONTACT_URL} target="_blank" rel="noopener noreferrer" className="btn-blue inline-flex items-center gap-2 text-lg">
+                Get A Quote
+                <ArrowRight size={20} />
+              </a>
             </div>
           </div>
         </section>
@@ -407,13 +488,10 @@ const CeramicCoating = () => {
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
               Ready to Care for <span className="text-gradient-blue">Your Car?</span>
             </h2>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button className="btn-blue text-lg">Get A Quote</Button>
-              <Button variant="outline" className="btn-outline-blue text-lg">
-                <Phone className="mr-2 w-5 h-5" />
-                Call [Your Phone Number]
-              </Button>
-            </div>
+            <a href={CONTACT_URL} target="_blank" rel="noopener noreferrer" className="btn-blue inline-flex items-center gap-2 text-lg">
+              Get A Quote
+              <ArrowRight size={20} />
+            </a>
           </div>
         </section>
       </main>

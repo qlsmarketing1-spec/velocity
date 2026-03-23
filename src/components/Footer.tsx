@@ -1,26 +1,20 @@
 import { Phone, Instagram, Facebook, Youtube, Linkedin } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const locations = [
-    "[Service Area 1]",
-    "[Service Area 2]",
-    "[Service Area 4]",
-    "[Service Area 5]",
-    "[Service Area 6]",
-    "[Service Area 7]",
-    "[Service Area 8]",
-    "[Service Area 9]",
-    "[Service Area 10]",
-    "[Service Area 11]",
-    "[Service Area 12]",
-    "[Service Area 13]",
+    "Bozeman, MT",
+    "Belgrade, MT",
+    "Four Corners, MT",
+    "Big Sky, MT",
+    "Gallatin County, MT",
   ];
 
   const socialLinks = [
-    { icon: Instagram, href: "https://www.instagram.com/[yourcompany]/", label: "Instagram" },
-    { icon: Facebook, href: "https://www.facebook.com/[yourcompany]", label: "Facebook" },
-    { icon: Youtube, href: "http://www.youtube.com/@[YourCompany]", label: "YouTube" },
-    { icon: Linkedin, href: "https://www.linkedin.com/company/[your-company]", label: "LinkedIn" },
+    { icon: Instagram, href: "https://www.instagram.com/velocitycardetailing/", label: "Instagram" },
+    { icon: Facebook, href: "https://www.facebook.com/velocitycardetailing", label: "Facebook" },
+    { icon: Youtube, href: "http://www.youtube.com/@VelocityCarDetailing", label: "YouTube" },
+    { icon: Linkedin, href: "https://www.linkedin.com/company/velocity-car-detailing", label: "LinkedIn" },
   ];
 
   const hours = [{ day: "Sunday - Saturday", time: "8am — 8pm" }];
@@ -28,24 +22,38 @@ const Footer = () => {
   return (
     <footer className="bg-background py-16 px-4 md:px-8">
       <div className="container mx-auto">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
           {/* Brand */}
           <div>
             <a href="#home" className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded-lg gradient-blue flex items-center justify-center">
-                <span className="font-display font-bold text-lg text-primary-foreground">YC</span>
-              </div>
-              <span className="font-display text-xl tracking-wider">
-                [YOUR <span className="text-primary">COMPANY]</span>
-              </span>
+              <img src="/logo.png" alt="Velocity Car Detailing" className="h-10 w-auto" />
             </a>
             <p className="text-foreground/60 mb-6">
-              Professional mobile car detailing services throughout the [Your City] metro area.
+              Professional mobile car detailing services throughout the Bozeman area.
             </p>
-            <a href="tel:[yourphone]" className="flex items-center gap-2 text-primary font-medium">
+            <a href="tel:+16124345327" className="flex items-center gap-2 text-primary font-medium">
               <Phone size={18} />
-              <span>[Your Phone]</span>
+              <span>(612) 434-5327</span>
             </a>
+          </div>
+
+          {/* Services */}
+          <div>
+            <h4 className="font-display text-lg mb-6 uppercase tracking-wider">Services</h4>
+            <ul className="space-y-2">
+              {[
+                { href: '/car-detailing-bozeman-mt', label: 'Car Detailing' },
+                { href: '/ceramic-coating-bozeman-mt', label: 'Ceramic Coating' },
+                { href: '/boat-detailing-bozeman-mt', label: 'Boat Detailing' },
+                { href: '/fleet-detailing-bozeman-mt', label: 'Fleet Detailing' },
+              ].map((link) => (
+                <li key={link.href}>
+                  <Link to={link.href} className="text-sm text-foreground/60 hover:text-primary transition-colors duration-200">
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
 
           {/* Locations */}
@@ -105,7 +113,7 @@ const Footer = () => {
         <div className="pt-8 border-t border-border">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm text-foreground/50">
-              © {new Date().getFullYear()} [Your Company]. All rights reserved.
+              © {new Date().getFullYear()} Velocity Car Detailing. All rights reserved.
             </p>
             <div className="flex gap-6 text-sm text-foreground/50">
               <a href="#" className="hover:text-primary transition-colors">
