@@ -116,12 +116,6 @@ const Footer = () => {
               © {new Date().getFullYear()} Velocity Car Detailing. All rights reserved.
             </p>
             <div className="flex gap-6 text-sm text-foreground/50">
-              <a href="#" className="hover:text-primary transition-colors">
-                Terms of Service
-              </a>
-              <a href="#" className="hover:text-primary transition-colors">
-                Privacy Policy
-              </a>
             </div>
           </div>
           <p className="text-xs text-foreground/40 text-center mt-6">

@@ -125,6 +125,7 @@ const ceramicServiceSchema = {
     '@type': 'LocalBusiness',
     name: 'Velocity Car Detailing',
     url: 'https://www.velocitydetailingmt.com',
+    telephone: '+16124345327',
     areaServed: 'Bozeman, MT',
   },
   offers: [
