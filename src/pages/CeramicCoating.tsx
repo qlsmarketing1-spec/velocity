@@ -133,7 +133,7 @@ const ceramicServiceSchema = {
       name: '2-Year Ceramic Coating',
       price: '795',
       priceCurrency: 'USD',
-      priceSpecification: { '@type': 'UnitPriceSpecification', description: 'Starting price, varies by vehicle size' },
+      description: 'Starting price, varies by vehicle size',
     },
   ],
   url: 'https://velocitycardetailing.com/ceramic-coating-bozeman-mt',

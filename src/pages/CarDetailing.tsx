@@ -247,17 +247,16 @@ const carDetailingSchema = {
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
     name: 'Auto Detailing Packages',
-    itemListElement: services.map((service) => ({
-      '@type': 'OfferCatalog',
-      name: service.subtitle ? `${service.title} — ${service.subtitle}` : service.title,
-      description: service.description,
-      itemListElement: service.pricing.map((tier) => ({
+    itemListElement: services.flatMap((service) =>
+      service.pricing.map((tier) => ({
         '@type': 'Offer',
-        name: tier.vehicle,
+        name: service.subtitle
+          ? `${service.title} — ${service.subtitle} (${tier.vehicle})`
+          : `${service.title} (${tier.vehicle})`,
         price: tier.price.replace('$', ''),
         priceCurrency: 'USD',
-      })),
-    })),
+      }))
+    ),
   },
   url: 'https://velocitycardetailing.com/car-detailing-bozeman-mt',
 };
