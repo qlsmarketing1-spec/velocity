@@ -98,10 +98,10 @@ const boatSchema = {
   provider: {
     "@type": "LocalBusiness",
     name: "Velocity Car Detailing",
-    url: "https://velocitycardetailing.com",
+    url: "https://www.velocitydetailingmt.com",
     areaServed: "Bozeman, MT",
   },
-  url: "https://velocitycardetailing.com/boat-detailing-bozeman-mt",
+  url: "https://www.velocitydetailingmt.com/boat-detailing-bozeman-mt",
 };
 
 const BoatDetailing = () => {

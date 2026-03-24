@@ -241,7 +241,7 @@ const carDetailingSchema = {
   provider: {
     '@type': 'LocalBusiness',
     name: 'Velocity Car Detailing',
-    url: 'https://velocitycardetailing.com',
+    url: 'https://www.velocitydetailingmt.com',
     areaServed: 'Bozeman, MT',
   },
   hasOfferCatalog: {
@@ -258,7 +258,7 @@ const carDetailingSchema = {
       }))
     ),
   },
-  url: 'https://velocitycardetailing.com/car-detailing-bozeman-mt',
+  url: 'https://www.velocitydetailingmt.com/car-detailing-bozeman-mt',
 };
 
 const CarDetailing = () => {

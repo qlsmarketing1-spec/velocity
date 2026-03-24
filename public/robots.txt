@@ -13,4 +13,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://velocitycardetailing.com/sitemap.xml
+Sitemap: https://www.velocitydetailingmt.com/sitemap.xml
