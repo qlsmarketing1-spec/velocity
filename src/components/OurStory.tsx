@@ -15,13 +15,13 @@ const OurStory = () => {
             {/* Story Content */}
             <div className="space-y-6 text-lg text-foreground/80 leading-relaxed">
               <p>
-                Velocity Car Detailing was founded with a simple mission: to provide exceptional car detailing services that save our customers time without compromising on quality. What started as a passion for automotive care has grown into a trusted mobile detailing service that the Bozeman community relies on.
+                Velocity Car Detailing was founded with a simple mission: to provide exceptional car detailing services that save our customers time without compromising on quality. After two years running one of the largest detailing companies in Minnesota, our founder brought that expertise to Bozeman — turning a proven track record in automotive care into a trusted mobile detailing service the community relies on.
               </p>
-              
+
               <p>
                 Our founder recognized that busy professionals and families needed a better solution than spending hours at traditional car washes. By bringing our premium services directly to homes and offices, we've made it easier than ever to maintain a showroom-quality vehicle.
               </p>
-              
+
               <p>
                 Today, our team of certified detailers continues to uphold the same values that built our reputation: meticulous attention to detail, premium products, and customer service that goes above and beyond.
               </p>
