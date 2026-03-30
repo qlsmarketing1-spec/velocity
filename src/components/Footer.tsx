@@ -17,7 +17,10 @@ const Footer = () => {
     { icon: Linkedin, href: "https://www.linkedin.com/company/velocity-car-detailing", label: "LinkedIn" },
   ];
 
-  const hours = [{ day: "Sunday - Saturday", time: "8am — 8pm" }];
+  const hours = [
+    { day: "Sunday - Friday", time: "8am — 6pm" },
+    { day: "Saturday", time: "Closed" },
+  ];
 
   return (
     <footer className="bg-background py-16 px-4 md:px-8">
