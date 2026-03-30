@@ -99,7 +99,7 @@ const Footer = () => {
               ))}
             </div>
             <a
-              href="https://g.co/kgs/8uE7T3h"
+              href="https://share.google/3ED0ImSWFoQ7QAD1F"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block mt-6 text-sm text-primary hover:underline"
