@@ -40,9 +40,9 @@ const services: ServiceSection[] = [
     title: 'Interior Detail',
     description: 'Want your interior to look and feel new? Look no further than our interior detail package.',
     pricing: [
-      { vehicle: 'Sedan / Coupe', price: '$225' },
-      { vehicle: 'SUV / Crossover', price: '$265' },
-      { vehicle: 'Large SUV / Minivan / Truck', price: '$295' },
+      { vehicle: 'Sedan / Coupe', price: '$235' },
+      { vehicle: 'SUV / Crossover', price: '$280' },
+      { vehicle: 'Large SUV / Minivan / Truck', price: '$310' },
     ],
     features: [
       'Vacuum and steam clean carpets',
@@ -65,9 +65,9 @@ const services: ServiceSection[] = [
     subtitle: 'Basic',
     description: 'For when your vehicle needs a little extra care. Bring your ride back to looking fresh.',
     pricing: [
-      { vehicle: 'Sedan / Coupe', price: '$125' },
-      { vehicle: 'SUV / Crossover', price: '$145' },
-      { vehicle: 'Large SUV / Minivan / Truck', price: '$165' },
+      { vehicle: 'Sedan / Coupe', price: '$145' },
+      { vehicle: 'SUV / Crossover', price: '$185' },
+      { vehicle: 'Large SUV / Minivan / Truck', price: '$225' },
     ],
     features: [
       'Wheel & tire deep clean',
@@ -116,9 +116,9 @@ const services: ServiceSection[] = [
     subtitle: 'Basic',
     description: 'Our most popular package. Give your vehicle the works for a fully refreshed ride.',
     pricing: [
-      { vehicle: 'Sedan / Coupe', price: '$315' },
-      { vehicle: 'SUV / Crossover', price: '$355' },
-      { vehicle: 'Large SUV / Minivan / Truck', price: '$405' },
+      { vehicle: 'Sedan / Coupe', price: '$335' },
+      { vehicle: 'SUV / Crossover', price: '$375' },
+      { vehicle: 'Large SUV / Minivan / Truck', price: '$425' },
     ],
     features: [
       'Full interior detail',
@@ -266,7 +266,7 @@ const CarDetailing = () => {
   useSEO({
     title: 'Car Detailing Bozeman MT | Velocity Car Detailing',
     description:
-      'Professional auto detailing in Bozeman, MT. Interior, exterior, paint correction, and full detail packages starting at $125. Book online today.',
+      'Professional auto detailing in Bozeman, MT. Interior, exterior, paint correction, and full detail packages starting at $145. Book online today.',
     canonical: '/car-detailing-bozeman-mt',
     jsonLd: carDetailingSchema,
   });

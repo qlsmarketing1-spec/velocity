@@ -20,7 +20,7 @@ const services: Service[] = [
   {
     title: 'Interior Detailing',
     description: 'Complete interior restoration for a fresh, clean cabin.',
-    price: '$225',
+    price: '$235',
     image: interiorImage,
     alt: 'Professional interior car detailing in Bozeman MT',
     features: [
@@ -33,7 +33,7 @@ const services: Service[] = [
   {
     title: 'Exterior Detailing',
     description: 'Bring back that showroom shine with our exterior package.',
-    price: '$125',
+    price: '$145',
     image: exteriorImage,
     alt: 'Exterior car detailing and hand wash in Bozeman MT',
     features: [
