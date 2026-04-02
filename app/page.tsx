@@ -35,7 +35,7 @@ const homepageSchema = {
   aggregateRating: {
     '@type': 'AggregateRating',
     ratingValue: '5.0',
-    reviewCount: '50',
+    reviewCount: '4',
   },
 };
 
