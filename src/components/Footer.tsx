@@ -13,7 +13,7 @@ const Footer = () => {
   const socialLinks = [
     { icon: Instagram, href: "https://www.instagram.com/velocitycardetailing/", label: "Instagram" },
     { icon: Facebook, href: "https://www.facebook.com/velocitycardetailing", label: "Facebook" },
-    { icon: Youtube, href: "http://www.youtube.com/@VelocityCarDetailing", label: "YouTube" },
+    { icon: Youtube, href: "https://www.youtube.com/channel/UCBDHuXbakJ-K_Tn28ucX3Wg", label: "YouTube" },
     { icon: Linkedin, href: "https://www.linkedin.com/company/velocity-car-detailing", label: "LinkedIn" },
   ];
 
