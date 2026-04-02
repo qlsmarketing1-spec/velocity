@@ -1,6 +1,8 @@
+'use client';
+
 import { useState, useEffect } from 'react';
 import { Menu, X, Phone } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -34,7 +36,7 @@ const Header = () => {
       <div className="container mx-auto px-6 md:px-10 lg:px-12">
         <div className="flex items-center justify-between h-10">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-3 group">
+          <Link href="/" className="flex items-center gap-3 group">
             <img
               src="/logo.png"
               alt="Velocity Car Detailing"
@@ -59,7 +61,7 @@ const Header = () => {
               ) : (
                 <Link
                   key={link.href}
-                  to={link.href}
+                  href={link.href}
                   className="text-sm text-foreground/60 hover:text-foreground/95 transition-all duration-300 tracking-wide"
                   style={{ fontWeight: 400 }}
                 >
@@ -120,7 +122,7 @@ const Header = () => {
                 ) : (
                   <Link
                     key={link.href}
-                    to={link.href}
+                    href={link.href}
                     onClick={() => setIsMobileMenuOpen(false)}
                     className="text-foreground/60 hover:text-foreground/95 transition-colors duration-300 py-3 tracking-wide"
                     style={{ fontWeight: 400 }}

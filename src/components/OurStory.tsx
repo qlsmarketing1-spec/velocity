@@ -1,4 +1,4 @@
-import ourStoryImage from '../../Photography/B5135549-4A8D-4128-8DA0-3B0BC257ECC2_1_201_a.jpeg';
+import ourStoryImage from '@/Photography/B5135549-4A8D-4128-8DA0-3B0BC257ECC2_1_201_a.jpeg';
 
 const OurStory = () => {
   return (
@@ -19,7 +19,7 @@ const OurStory = () => {
               </p>
 
               <p>
-                Our founder recognized that busy professionals and families needed a better solution than spending hours at traditional car washes. By bringing our premium services directly to homes and offices, we've made it easier than ever to maintain a showroom-quality vehicle.
+                Our founder recognized that busy professionals and families needed a better solution than spending hours at traditional car washes. By bringing our premium services directly to homes and offices, we&apos;ve made it easier than ever to maintain a showroom-quality vehicle.
               </p>
 
               <p>
@@ -52,7 +52,7 @@ const OurStory = () => {
           <div className="order-1 lg:order-2">
             <div className="aspect-square overflow-hidden rounded-2xl">
               <img
-                src={ourStoryImage}
+                src={ourStoryImage.src}
                 alt="Professional car detailer at work"
                 className="w-full h-full object-cover"
                 loading="lazy"

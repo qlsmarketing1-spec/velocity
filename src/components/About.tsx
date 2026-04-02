@@ -1,13 +1,13 @@
-import about1 from '@/assets/about-1.jpg';
-import about2 from '@/assets/about-2.jpg';
-import about3 from '@/assets/about-3.jpg';
-import about4 from '@/assets/about-4.jpg';
+import about1 from '@/src/assets/about-1.jpg';
+import about2 from '@/src/assets/about-2.jpg';
+import about3 from '@/src/assets/about-3.jpg';
+import about4 from '@/src/assets/about-4.jpg';
 
 const aboutImages = [
-  { src: about1, alt: 'Velocity detailer cleaning car windshield' },
-  { src: about2, alt: 'Professional car detailing close-up' },
-  { src: about3, alt: 'Velocity Car Detailing team at work' },
-  { src: about4, alt: 'Premium auto detailing in Bozeman MT' },
+  { src: about1.src, alt: 'Velocity detailer cleaning car windshield' },
+  { src: about2.src, alt: 'Professional car detailing close-up' },
+  { src: about3.src, alt: 'Velocity Car Detailing team at work' },
+  { src: about4.src, alt: 'Premium auto detailing in Bozeman MT' },
 ];
 
 const About = () => {

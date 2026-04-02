@@ -1,5 +1,5 @@
 import { ArrowRight, Phone } from 'lucide-react';
-import heroImage from '@/assets/hero-bg.jpg';
+import heroImage from '@/src/assets/hero-bg.jpg';
 
 const Hero = () => {
   return (
@@ -10,7 +10,7 @@ const Hero = () => {
       {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${heroImage})` }}
+        style={{ backgroundImage: `url(${heroImage.src})` }}
         role="img"
         aria-label="Velocity Car Detailing professional auto detailing in Bozeman MT"
       />

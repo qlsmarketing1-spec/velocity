@@ -1,10 +1,10 @@
 import { Check } from 'lucide-react';
-import interiorImage from '@/assets/interior-detail.jpg';
-import exteriorImage from '@/assets/exterior-detail.jpg';
-import ceramicImage from '@/assets/ceramic-coating.jpg';
-import paintCorrectionImage from '@/assets/paint-correction.jpg';
-import boatDetailImage from '@/assets/boat-detail.jpg';
-import fleetDetailImage from '@/assets/fleet-detail.jpg';
+import interiorImage from '@/src/assets/interior-detail.jpg';
+import exteriorImage from '@/src/assets/exterior-detail.jpg';
+import ceramicImage from '@/src/assets/ceramic-coating.jpg';
+import paintCorrectionImage from '@/src/assets/paint-correction.jpg';
+import boatDetailImage from '@/src/assets/boat-detail.jpg';
+import fleetDetailImage from '@/src/assets/fleet-detail.jpg';
 
 interface Service {
   title: string;
@@ -21,7 +21,7 @@ const services: Service[] = [
     title: 'Interior Detailing',
     description: 'Complete interior restoration for a fresh, clean cabin.',
     price: '$235',
-    image: interiorImage,
+    image: interiorImage.src,
     alt: 'Professional interior car detailing in Bozeman MT',
     features: [
       'Deep vacuum & steam cleaning',
@@ -34,7 +34,7 @@ const services: Service[] = [
     title: 'Exterior Detailing',
     description: 'Bring back that showroom shine with our exterior package.',
     price: '$145',
-    image: exteriorImage,
+    image: exteriorImage.src,
     alt: 'Exterior car detailing and hand wash in Bozeman MT',
     features: [
       'Hand wash & dry',
@@ -47,7 +47,7 @@ const services: Service[] = [
     title: 'Ceramic Coating',
     description: 'Ultimate protection with long-lasting ceramic coating.',
     price: '$795',
-    image: ceramicImage,
+    image: ceramicImage.src,
     alt: 'Ceramic coating application on a vehicle in Bozeman MT',
     features: [
       'Paint correction included',
@@ -60,7 +60,7 @@ const services: Service[] = [
     title: 'Paint Correction',
     description: 'Remove swirls, scratches, and oxidation for a flawless finish.',
     price: '$400',
-    image: paintCorrectionImage,
+    image: paintCorrectionImage.src,
     alt: 'Paint correction and scratch removal on a vehicle',
     features: [
       'Swirl mark removal',
@@ -72,7 +72,7 @@ const services: Service[] = [
   {
     title: 'Boat Detailing',
     description: 'Professional detailing services to keep your boat looking pristine.',
-    image: boatDetailImage,
+    image: boatDetailImage.src,
     alt: 'Professional boat detailing service in Bozeman MT',
     contactOnly: true,
     features: [
@@ -85,7 +85,7 @@ const services: Service[] = [
   {
     title: 'Fleet Detailing',
     description: 'Keep your entire fleet looking sharp and professional.',
-    image: fleetDetailImage,
+    image: fleetDetailImage.src,
     alt: 'Fleet vehicle detailing and commercial car washing',
     contactOnly: true,
     features: [

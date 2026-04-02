@@ -1,5 +1,5 @@
 import { Phone, Instagram, Facebook, Youtube, Linkedin } from "lucide-react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 const Footer = () => {
   const locations = [
@@ -51,7 +51,7 @@ const Footer = () => {
                 { href: '/fleet-detailing-bozeman-mt', label: 'Fleet Detailing' },
               ].map((link) => (
                 <li key={link.href}>
-                  <Link to={link.href} className="text-sm text-foreground/60 hover:text-primary transition-colors duration-200">
+                  <Link href={link.href} className="text-sm text-foreground/60 hover:text-primary transition-colors duration-200">
                     {link.label}
                   </Link>
                 </li>
