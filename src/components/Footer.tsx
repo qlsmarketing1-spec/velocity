@@ -131,9 +131,9 @@ const Footer = () => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="DetailPro"
-              className="opacity-60 hover:opacity-90 transition-opacity duration-200"
+              className="opacity-100 hover:opacity-80 transition-opacity duration-200"
             >
-              <img src="/detailpro-logo.svg" alt="DetailPro" className="h-8 w-auto" />
+              <img src="/detailpro-logo.svg" alt="DetailPro" className="h-12 w-auto" />
             </a>
           </div>
         </div>
