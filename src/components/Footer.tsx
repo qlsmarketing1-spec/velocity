@@ -124,6 +124,18 @@ const Footer = () => {
           <p className="text-xs text-foreground/40 text-center mt-6">
             Bookings outside of our service range (30 min away) may incur additional charges.
           </p>
+          <div className="flex items-center justify-center gap-2 mt-4">
+            <span className="text-xs text-foreground/30">powered by</span>
+            <a
+              href="https://www.detailpro.tech"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="DetailPro"
+              className="opacity-40 hover:opacity-70 transition-opacity duration-200"
+            >
+              <img src="/detailpro-logo.svg" alt="DetailPro" className="h-5 w-auto" />
+            </a>
+          </div>
         </div>
       </div>
     </footer>
