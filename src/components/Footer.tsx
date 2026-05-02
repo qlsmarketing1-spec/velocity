@@ -36,7 +36,7 @@ const Footer = () => {
             </p>
             <a href="tel:+16124345327" className="flex items-center gap-2 text-primary font-medium">
               <Phone size={18} />
-              <span>(612) 434-5327</span>
+              <span className="italic">(612) 434-5327</span>
             </a>
           </div>
 

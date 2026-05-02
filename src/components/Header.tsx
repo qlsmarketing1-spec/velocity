@@ -79,7 +79,7 @@ const Header = () => {
               style={{ fontWeight: 400 }}
             >
               <Phone size={14} className="opacity-60" />
-              <span className="text-sm">(612) 434-5327</span>
+              <span className="text-sm italic">(612) 434-5327</span>
             </a>
             <a
               href="https://detailprocrm.com/book/ed56c048-9b45-4d92-90d2-b55ed2ee5936"
@@ -137,7 +137,7 @@ const Header = () => {
                 style={{ fontWeight: 400 }}
               >
                 <Phone size={14} className="opacity-60" />
-                <span>(612) 434-5327</span>
+                <span className="italic">(612) 434-5327</span>
               </a>
             </div>
           </nav>
