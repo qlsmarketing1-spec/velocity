@@ -1,10 +1,10 @@
-import about1 from '@/src/assets/about-1.jpg';
+import truck from '@/src/assets/velocity-truck.png';
 import about2 from '@/src/assets/about-2.jpg';
 import about3 from '@/src/assets/about-3.jpg';
 import about4 from '@/src/assets/about-4.jpg';
 
 const aboutImages = [
-  { src: about1.src, alt: 'Velocity detailer cleaning car windshield' },
+  { src: truck.src, alt: 'Velocity Car Detailing branded truck at a mobile detailing appointment in Bozeman, MT' },
   { src: about2.src, alt: 'Professional car detailing close-up' },
   { src: about3.src, alt: 'Velocity Car Detailing team at work' },
   { src: about4.src, alt: 'Premium auto detailing in Bozeman MT' },
