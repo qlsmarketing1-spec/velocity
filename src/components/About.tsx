@@ -4,10 +4,10 @@ import about3 from '@/src/assets/about-3.jpg';
 import about4 from '@/src/assets/about-4.jpg';
 
 const aboutImages = [
-  { src: truck.src, alt: 'Velocity Car Detailing branded truck at a mobile detailing appointment in Bozeman, MT' },
-  { src: about2.src, alt: 'Professional car detailing close-up' },
-  { src: about3.src, alt: 'Velocity Car Detailing team at work' },
-  { src: about4.src, alt: 'Premium auto detailing in Bozeman MT' },
+  { src: truck.src, alt: 'Velocity Car Detailing branded truck at a mobile detailing appointment in Bozeman, MT', position: 'object-right' },
+  { src: about2.src, alt: 'Professional car detailing close-up', position: 'object-center' },
+  { src: about3.src, alt: 'Velocity Car Detailing team at work', position: 'object-center' },
+  { src: about4.src, alt: 'Premium auto detailing in Bozeman MT', position: 'object-center' },
 ];
 
 const About = () => {
@@ -42,7 +42,7 @@ const About = () => {
                 <img
                   src={img.src}
                   alt={img.alt}
-                  className="w-full h-full object-cover"
+                  className={`w-full h-full object-cover ${img.position}`}
                   loading="lazy"
                 />
               </div>
