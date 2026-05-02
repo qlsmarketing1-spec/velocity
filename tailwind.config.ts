@@ -19,8 +19,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ['Norwester', 'sans-serif'],
-        body: ['DM Sans', 'sans-serif'],
+        display: ['Satoshi', 'sans-serif'],
+        body: ['Plus Jakarta Sans', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",
