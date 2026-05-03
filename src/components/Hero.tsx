@@ -1,5 +1,5 @@
 import { ArrowRight, Phone } from 'lucide-react';
-import heroImage from '@/src/assets/hero-bg.jpg';
+import heroImage from '@/src/assets/velocity-truck.png';
 
 const Hero = () => {
   return (

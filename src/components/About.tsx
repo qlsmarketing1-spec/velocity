@@ -1,10 +1,10 @@
-import truck from '@/src/assets/velocity-truck.png';
+import heroBg from '@/src/assets/hero-bg.jpg';
 import about2 from '@/src/assets/about-2.jpg';
 import about3 from '@/src/assets/about-3.jpg';
 import about4 from '@/src/assets/about-4.jpg';
 
 const aboutImages = [
-  { src: truck.src, alt: 'Velocity Car Detailing branded truck at a mobile detailing appointment in Bozeman, MT', position: 'object-right' },
+  { src: heroBg.src, alt: 'Professional car detailing in Bozeman, MT by Velocity Car Detailing', position: 'object-center' },
   { src: about2.src, alt: 'Professional car detailing close-up', position: 'object-center' },
   { src: about3.src, alt: 'Velocity Car Detailing team at work', position: 'object-center' },
   { src: about4.src, alt: 'Premium auto detailing in Bozeman MT', position: 'object-center' },
