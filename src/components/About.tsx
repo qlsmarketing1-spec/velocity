@@ -19,7 +19,7 @@ const About = () => {
           {/* Text Content */}
           <div>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              <span className="text-gradient-blue">We Got You</span>
+              <span className="text-gradient-blue">Our Promise</span>
             </h2>
             <div className="space-y-6 mb-8">
               <div>
