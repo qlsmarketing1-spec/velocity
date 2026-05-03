@@ -21,12 +21,20 @@ const About = () => {
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
               <span className="text-gradient-blue">We Got You</span>
             </h2>
-            <p className="text-lg text-foreground/80 mb-6 leading-relaxed">
-              At Velocity Car Detailing, we understand that your vehicle is more than just transportation—it's an extension of your lifestyle. Our expert team brings years of professional detailing experience directly to your location.
-            </p>
-            <p className="text-lg text-foreground/80 mb-8 leading-relaxed">
-              Using only premium products and cutting-edge techniques, we restore your vehicle to showroom condition. From thorough interior deep cleans to paint correction and ceramic coating, we've got you covered.
-            </p>
+            <div className="space-y-6 mb-8">
+              <div>
+                <p className="text-base font-semibold text-foreground uppercase tracking-wide mb-1">We respect your time.</p>
+                <p className="text-foreground/70 leading-relaxed">When you book with us, you're not left wondering when we'll show—we communicate with you from the moment you book, and arrive early, ready, and fully prepared so your day stays on track.</p>
+              </div>
+              <div>
+                <p className="text-base font-semibold text-foreground uppercase tracking-wide mb-1">We tailor everything to you.</p>
+                <p className="text-foreground/70 leading-relaxed">No cookie-cutter packages. We listen, recommend what actually makes sense for your car, and deliver results that match (and usually exceed) what you had in mind.</p>
+              </div>
+              <div>
+                <p className="text-base font-semibold text-foreground uppercase tracking-wide mb-1">We leave it better—every time.</p>
+                <p className="text-foreground/70 leading-relaxed">With years of experience we clean, restore, and protect your vehicle to not only make it look better, but preserve its value.</p>
+              </div>
+            </div>
             <a href="#contact" className="btn-blue inline-block">
               Contact Us
             </a>
