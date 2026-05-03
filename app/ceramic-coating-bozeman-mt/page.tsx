@@ -219,8 +219,8 @@ export default function CeramicCoatingPage() {
           <div className="container mx-auto">
             <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
               <div>
-                <p className="text-primary font-semibold uppercase tracking-wider mb-4">Ceramic Specialists</p>
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">You May Be Thinking...</h2>
+                <p className="text-primary font-semibold uppercase tracking-wider mb-4">You May Be Thinking...</p>
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">What is Ceramic Coating?</h2>
                 <p className="text-lg text-foreground/70">
                   A ceramic coating will protect your ride from the elements, keep your vehicle looking clean longer,
                   and make washing a breeze! Long gone are the days of spending the whole afternoon washing your car!
