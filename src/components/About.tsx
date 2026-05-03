@@ -18,20 +18,20 @@ const About = () => {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Text Content */}
           <div>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-10">
               <span className="text-gradient-blue">Our Promise</span>
             </h2>
-            <div className="space-y-6 mb-8">
-              <div>
-                <p className="text-base font-semibold text-foreground uppercase tracking-wide mb-1">We respect your time.</p>
+            <div className="space-y-8 mb-10">
+              <div className="border-l-2 border-primary pl-5">
+                <p className="text-sm font-semibold text-primary uppercase tracking-widest mb-2">We respect your time.</p>
                 <p className="text-foreground/70 leading-relaxed">When you book with us, you're not left wondering when we'll show—we communicate with you from the moment you book, and arrive early, ready, and fully prepared so your day stays on track.</p>
               </div>
-              <div>
-                <p className="text-base font-semibold text-foreground uppercase tracking-wide mb-1">We tailor everything to you.</p>
+              <div className="border-l-2 border-primary pl-5">
+                <p className="text-sm font-semibold text-primary uppercase tracking-widest mb-2">We tailor everything to you.</p>
                 <p className="text-foreground/70 leading-relaxed">No cookie-cutter packages. We listen, recommend what actually makes sense for your car, and deliver results that match (and usually exceed) what you had in mind.</p>
               </div>
-              <div>
-                <p className="text-base font-semibold text-foreground uppercase tracking-wide mb-1">We leave it better—every time.</p>
+              <div className="border-l-2 border-primary pl-5">
+                <p className="text-sm font-semibold text-primary uppercase tracking-widest mb-2">We leave it better—every time.</p>
                 <p className="text-foreground/70 leading-relaxed">With years of experience we clean, restore, and protect your vehicle to not only make it look better, but preserve its value.</p>
               </div>
             </div>
