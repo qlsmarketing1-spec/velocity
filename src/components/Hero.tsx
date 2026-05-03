@@ -21,7 +21,7 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 md:px-8 pt-20">
         <div className="max-w-3xl">
-          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-tight animate-fade-up">
+          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold animate-fade-up">
             <span className="text-foreground">Bozeman</span>
             <br />
             <span className="text-gradient-blue">Car Detailing</span>
