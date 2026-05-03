@@ -1,5 +1,4 @@
 import { ArrowRight, Phone } from 'lucide-react';
-import heroImage from '@/src/assets/velocity-truck.png';
 
 const Hero = () => {
   return (
@@ -7,14 +6,19 @@ const Hero = () => {
       id="home"
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Background Image */}
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${heroImage.src})` }}
-        role="img"
-        aria-label="Velocity Car Detailing professional auto detailing in Bozeman MT"
-      />
-      
+      {/* Background Video */}
+      <video
+        className="absolute inset-0 w-full h-full object-cover"
+        autoPlay
+        loop
+        muted
+        playsInline
+        aria-hidden="true"
+      >
+        <source src="/hero-video.webm" type="video/webm" />
+        <source src="/hero-video.mp4" type="video/mp4" />
+      </video>
+
       {/* Dark Overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background" />
 
