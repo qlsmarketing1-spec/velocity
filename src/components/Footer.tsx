@@ -3,12 +3,12 @@ import Link from "next/link";
 
 const Footer = () => {
   const locations = [
-    "Bozeman, MT",
-    "Belgrade, MT",
-    "Four Corners, MT",
-    "Big Sky, MT",
-    "Gallatin County, MT",
-  ];
+    { label: "Bozeman, MT", href: "/car-detailing-bozeman-mt" },
+    { label: "Belgrade, MT", href: "/car-detailing-belgrade-mt" },
+    { label: "Four Corners, MT", href: "/car-detailing-four-corners-mt" },
+    { label: "Big Sky, MT", href: "/car-detailing-big-sky-mt" },
+    { label: "Gallatin County, MT", href: "/car-detailing-gallatin-county-mt" },
+  ] as const;
 
   const socialLinks = [
     { icon: Instagram, href: "https://www.instagram.com/velocitycardetailing/", label: "Instagram" },
@@ -63,9 +63,11 @@ const Footer = () => {
           <div>
             <h4 className="font-display text-lg mb-6 uppercase tracking-wider">Locations Served</h4>
             <ul className="grid grid-cols-2 gap-x-4 gap-y-2">
-              {locations.slice(0, 8).map((location, index) => (
-                <li key={index} className="text-sm text-foreground/60">
-                  {location}
+              {locations.map((location, index) => (
+                <li key={index}>
+                  <Link href={location.href} className="text-sm text-foreground/60 hover:text-primary transition-colors duration-200">
+                    {location.label}
+                  </Link>
                 </li>
               ))}
             </ul>

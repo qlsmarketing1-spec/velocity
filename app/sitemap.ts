@@ -11,6 +11,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${BASE_URL}/boat-detailing-bozeman-mt`, changeFrequency: 'monthly', priority: 0.9 },
     { url: `${BASE_URL}/fleet-detailing-bozeman-mt`, changeFrequency: 'monthly', priority: 0.9 },
     { url: `${BASE_URL}/blog`, changeFrequency: 'weekly', priority: 0.8 },
+    { url: `${BASE_URL}/car-detailing-belgrade-mt`, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE_URL}/car-detailing-four-corners-mt`, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE_URL}/car-detailing-big-sky-mt`, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE_URL}/car-detailing-gallatin-county-mt`, changeFrequency: 'monthly', priority: 0.8 },
   ];
 
   const slugs = await getAllSlugs();
