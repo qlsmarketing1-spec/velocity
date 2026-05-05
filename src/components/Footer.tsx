@@ -1,4 +1,4 @@
-import { Phone, Instagram, Facebook, Youtube, Linkedin } from "lucide-react";
+import { Phone, Instagram, Facebook, Youtube } from "lucide-react";
 import Link from "next/link";
 
 const Footer = () => {
@@ -11,10 +11,9 @@ const Footer = () => {
   ] as const;
 
   const socialLinks = [
-    { icon: Instagram, href: "https://www.instagram.com/velocitycardetailing/", label: "Instagram" },
-    { icon: Facebook, href: "https://www.facebook.com/velocitycardetailing", label: "Facebook" },
+    { icon: Instagram, href: "https://www.instagram.com/velocitydetailingmt?igsh=MTFjOWJvbDV2b3d0bg%3D%3D&", label: "Instagram" },
+    { icon: Facebook, href: "https://www.facebook.com/profile.php?id=61589017723415", label: "Facebook" },
     { icon: Youtube, href: "https://www.youtube.com/channel/UCBDHuXbakJ-K_Tn28ucX3Wg", label: "YouTube" },
-    { icon: Linkedin, href: "https://www.linkedin.com/company/velocity-car-detailing", label: "LinkedIn" },
   ];
 
   const hours = [
